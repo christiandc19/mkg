@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 
 import SiteLayout from "./layouts/SiteLayout";
@@ -9,16 +9,14 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 
-
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     element: <SiteLayout />,
     children: [
       { path: "/", element: <Home /> },
-      { path: "/about", element: <About /> },      
+      { path: "/about", element: <About /> },
       { path: "/services", element: <Services /> },
       { path: "/contact", element: <Contact /> },
-
     ],
   },
 ]);
