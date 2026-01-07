@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import laptopGuy from "../assets/images/laptop-guy.png";
-import Notepad from "../assets/images/brand-strategy.png";
 import Imac from "../assets/images/imac.png";
+import VideoSection from "../components/home/VideoSection";
+import TestimonialCarousel from "../components/home/TestimonialCarousel";
 
 import logo1 from "../assets/images/google.png";
 import logo2 from "../assets/images/meta.png";
@@ -13,6 +14,10 @@ import logo7 from "../assets/images/magento.png";
 import logo8 from "../assets/images/semrush.png";
 import logo9 from "../assets/images/wix.png";
 import logo10 from "../assets/images/react.png";
+import logo11 from "../assets/images/tiktok.png";
+import logo12 from "../assets/images/instagram.png";
+import logo13 from "../assets/images/facebook.png";
+import logo14 from "../assets/images/google_ads.png";
 
 
 import { motion } from "framer-motion";
@@ -50,40 +55,6 @@ function MarqueeItem({ item }) {
     lineHeight: "0.95",
   };
 
-  if (typeof item === "string") {
-    return (
-      <span className="text-black" style={baseTextStyle}>
-        {item}
-      </span>
-    );
-  }
-
-  if (item?.type === "dot") {
-    return (
-      <span
-        aria-hidden
-        className="inline-block rounded-full"
-        style={{
-          width: "clamp(22px, 3vw, 56px)",
-          height: "clamp(22px, 3vw, 56px)",
-          backgroundColor: item.color || "#ffc107",
-        }}
-      />
-    );
-  }
-
-  if (item?.type === "img") {
-    return (
-      <span className="inline-flex items-center">
-        <img
-          src={item.src}
-          alt={item.alt || ""}
-          className="h-[52px] w-[96px] rounded-md object-cover md:h-[68px] md:w-[120px]"
-          draggable="false"
-        />
-      </span>
-    );
-  }
 
 if (item?.type === "logo") {
   return (
@@ -93,16 +64,15 @@ if (item?.type === "logo") {
         alt={item.alt || "Logo"}
         draggable="false"
         className="
-          h-10 sm:h-12 md:h-14
+          h-[4.5rem]
           w-auto
           transition-transform duration-200
           hover:scale-105
-        "
+                "
       />
     </span>
   );
 }
-
 
 
 
@@ -202,6 +172,11 @@ export default function Home() {
         { type: "logo", src: logo8, alt: "Semrush" },
         { type: "logo", src: logo9, alt: "Wix" },
         { type: "logo", src: logo10, alt: "React" },
+        { type: "logo", src: logo11, alt: "Tiktok" },
+        { type: "logo", src: logo12, alt: "Instagram" },
+        { type: "logo", src: logo13, alt: "Facebook" },
+        { type: "logo", src: logo14, alt: "Google Ads" },
+
       ]}
     />
   </div> 
@@ -213,41 +188,50 @@ export default function Home() {
 </section>
 
 
+{/* ------------------------------------------------------- Video ------------------------------------- */}
+
+      {/* Full height video */}
+      <VideoSection />
+
+
 {/* ------------------------------------------------------- PHRASE ------------------------------------- */}
 
 
       {/* PHRASE */}
-      <section className="flex h-[50vh] items-center justify-center px-10">
-        <div className="mx-auto max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <p
-              className="leading-tight text-black/80"
-              style={{
-                fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
-                fontFamily: "Kinta, sans-serif",
-                fontWeight: 400,
-              }}
-            >
-              Bringing a human touch to digital growth through deep engagement, intentional
-              storytelling, and measurable results.
-            </p>
-          </motion.div>
+<section className="flex min-h-[55vh] md:min-h-[60vh] items-center justify-center px-5 sm:px-8 md:px-12">
+  <div className="mx-auto w-full max-w-5xl text-center">
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      <p
+        className="leading-snug text-black/80"
+        style={{
+          fontSize: "clamp(1.6rem, 2.6vw, 2.3rem)",
+          fontFamily: "Kinta, sans-serif",
+          fontWeight: 400,
+        }}
+      >
+        Our mission is simple: Help clients excel in viral marketing, branding, and social media,
+        leading them to increased profitability. Media King Group has quickly emerged as a beacon for
+        people and businesses striving to make their mark in the ever-evolving landscape of branding,
+        marketing, and social media.
+      </p>
+    </motion.div>
 
-          <div className="mt-6">
-            <a
-              href="/about"
-              className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-black/60 hover:text-black"
-            >
-              Learn more about MKG <span aria-hidden>↗</span>
-            </a>
-          </div>
-        </div>
-      </section>
+    <div className="mt-8">
+      <a
+        href="/about"
+        className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-black/60 hover:text-black transition"
+      >
+        Learn more about MKG <span aria-hidden>↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 
 
 {/* ------------------------------------------------------- MAC ------------------------------------- */}
@@ -289,77 +273,9 @@ export default function Home() {
   </div>
 </section>
 
+<TestimonialCarousel />
 
 
-{/* ------------------------------------------------------- FOOTER ------------------------------------- */}
-
-
-{/* FOOTER */}
-<footer className="px-10 pb-10 flex">
-  <div className="mx-auto max-w-6xl">
-    <div className="border-t border-black/10 pt-10">
-      <div className="grid gap-10 md:grid-cols-3">
-        {/* Brand */}
-        <div>
-          <div
-            className="tracking-tight"
-            style={{
-              fontFamily: "Kinta, sans-serif",
-              fontWeight: 400,
-              fontSize: "1.5rem",
-            }}
-          >
-            MKG Digital Management
-          </div>
-
-          <p className="mt-4 max-w-sm text-sm text-black/70">
-            Minimal systems. Measurable growth. Human-led digital management built to last.
-          </p>
-
-          <p className="mt-6 text-xs uppercase tracking-widest text-black/50">
-            Based in Los Angeles, CA
-          </p>
-        </div>
-
-        {/* Links */}
-        <div className="grid grid-cols-2 gap-8 md:col-span-2 md:grid-cols-3">
-          <FooterCol title="Explore">
-            <FooterLink href="/">Home</FooterLink>
-            <FooterLink href="/about">About</FooterLink>
-            <FooterLink href="/services">Services</FooterLink>
-          </FooterCol>
-
-          <FooterCol title="Contact">
-            <FooterLink href="/about#contact">Contact</FooterLink>
-            <FooterLink href="mailto:hello@mkggroup.com">hello@mkggroup.com</FooterLink>
-            <FooterLink href="tel:+13105551234">(310) 555-1234</FooterLink>
-          </FooterCol>
-
-          <FooterCol title="Follow">
-            <FooterLink href="#" target="_blank" rel="noreferrer">
-              Instagram
-            </FooterLink>
-            <FooterLink href="#" target="_blank" rel="noreferrer">
-              LinkedIn
-            </FooterLink>
-            <FooterLink href="#" target="_blank" rel="noreferrer">
-              YouTube
-            </FooterLink>
-          </FooterCol>
-        </div>
-      </div>
-
-      {/* Bottom bar */}
-      <div className="mt-10 flex flex-col gap-3 border-t border-black/10 pt-6 text-xs text-black/60 md:flex-row md:items-center md:justify-between">
-        <div>© {new Date().getFullYear()} MKG Digital Management. All rights reserved.</div>
-        <div className="flex gap-6">
-          <a className="hover:text-black" href="/privacy">Privacy</a>
-          <a className="hover:text-black" href="/terms">Terms</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
 
 
 
@@ -370,23 +286,3 @@ export default function Home() {
 }
 
 
-function FooterCol({ title, children }) {
-  return (
-    <div>
-      <p className="text-xs uppercase tracking-widest text-black/50">{title}</p>
-      <div className="mt-4 flex flex-col gap-2">{children}</div>
-    </div>
-  );
-}
-
-function FooterLink({ href, children, ...props }) {
-  return (
-    <a
-      href={href}
-      className="text-sm text-black/70 hover:text-black transition-colors"
-      {...props}
-    >
-      {children}
-    </a>
-  );
-}

@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/home/Navbar";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Footer from "../components/home/Footer";
 
 export default function SiteLayout() {
   const { scrollYProgress } = useScroll();
@@ -26,6 +27,9 @@ export default function SiteLayout() {
       </div>
 
       <Outlet />
+      <Footer />
+
     </motion.div>
   );
 }
+
