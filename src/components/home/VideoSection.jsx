@@ -18,20 +18,33 @@ export default function VideoSection() {
         <div className="absolute inset-0 bg-black/40" />
 
         {/* Text overlay */}
-        <div className="absolute inset-0 z-10 flex items-center justify-center px-6 text-center">
-          <h2
-            className="leading-tight text-white"
-            style={{
-              fontFamily: "Kinta, sans-serif",
-              fontWeight: 400,
-              fontSize: "clamp(2.5rem, 6vw, 5rem)",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            be seen.<br />
-            achieve growth.
-          </h2>
-        </div>
+<div className="absolute inset-0 z-10 flex items-center justify-center px-6 text-center">
+  <div className="leading-tight text-white">
+    <div
+      style={{
+        fontFamily: "Kinta, sans-serif",
+        fontWeight: 400,
+        fontSize: "clamp(1.8rem, 4vw, 2rem)", // smaller
+        letterSpacing: "-0.01em",
+      }}
+    >
+      be seen.
+    </div>
+
+    <div
+      style={{
+        fontFamily: "Kinta, sans-serif",
+        fontWeight: 400,
+        fontSize: "clamp(2.8rem, 6vw, 5rem)", // larger
+        letterSpacing: "-0.02em",
+        marginTop: "-0.2em", // pull them a bit closer
+      }}
+    >
+      achieve growth.
+    </div>
+  </div>
+</div>
+
       </div>
     </section>
   );
