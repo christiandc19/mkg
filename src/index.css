@@ -7,3 +7,60 @@
   font-style: normal;
   font-display: swap;
 }
+
+
+/* MARQUEE */
+
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee-left var(--marquee-duration) linear infinite;
+}
+
+.marquee--right .marquee__track {
+  animation-name: marquee-right;
+}
+
+.marquee__inner {
+  display: flex;
+  gap: 3.5rem; /* spacing between logos */
+  padding-right: 3.5rem; /* prevent visual seam */
+}
+
+.marquee__inner > * {
+  flex-shrink: 0;
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
