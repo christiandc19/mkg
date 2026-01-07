@@ -6,6 +6,8 @@ import "./index.css";
 import SiteLayout from "./layouts/SiteLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
+
 
 const router = createBrowserRouter([
   {
@@ -13,6 +15,8 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/about", element: <About /> },
+      { path: "/contact", element: <Contact /> },
+
     ],
   },
 ]);
