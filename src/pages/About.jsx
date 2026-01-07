@@ -17,20 +17,45 @@ export default function About() {
         </h1>
       </section>
 
-      {/* Full height video */}
-      <VideoSection />
 
-      {/* Add more “About” content here later */}
-      <section className="px-10 py-16">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-3xl" style={{ fontFamily: "Kinta, sans-serif" }}>
+      {/* About Content */}
+      <section className="px-10 py-24">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2
+            className="text-4xl tracking-tight"
+            style={{ fontFamily: "Kinta, sans-serif" }}
+          >
             About MKG
           </h2>
-          <p className="mt-4 text-black/70">
-            Add your story, services overview, approach, and proof here.
-          </p>
+
+          <div className="mt-10 space-y-6 text-lg leading-relaxed text-black/70">
+            <p>
+              <strong className="text-black">Our mission is simple:</strong> to help clients excel in branding,
+              marketing, and social media — leading to meaningful growth and
+              increased profitability. Media King Group has become a creative
+              partner for brands and businesses looking to stand out in an
+              ever-evolving digital landscape.
+            </p>
+
+            <p>
+              We are your viral marketing company. We specialize in shaping
+              content, messaging, and platforms to resonate deeply with your
+              exact audience. Our work has driven billions of views, millions of
+              new followers, and powerful brand transformations through
+              redesigns, campaigns, and high-performance websites.
+            </p>
+
+            <p>
+              Our services span social media strategy and management, brand
+              consulting, website design and development, videography,
+              photography, and content marketing. At Media King Group, we believe
+              in helping you be seen — and helping you grow.
+            </p>
+          </div>
         </div>
       </section>
+
+      
     </>
   );
 }

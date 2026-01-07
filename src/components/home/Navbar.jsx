@@ -130,7 +130,7 @@ export default function Navbar() {
                 <nav className="space-y-2">
                   <MenuLink variants={itemVariants} label="Home" onClick={() => goTo("/")} />
                   <MenuLink variants={itemVariants} label="About" onClick={() => goTo("/about")} />
-                  <MenuLink variants={itemVariants} label="Service" onClick={() => goTo("#services")} />
+                  <MenuLink variants={itemVariants} label="Service" onClick={() => goTo("/services")} />
                   <MenuLink variants={itemVariants} label="Contact" onClick={() => goTo("/contact")} />
                 </nav>
 
