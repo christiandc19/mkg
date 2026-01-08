@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/home/Navbar";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Footer from "../components/home/Footer";
+import { Link } from "react-router-dom";
 
 export default function SiteLayout() {
   const { scrollYProgress } = useScroll();
@@ -17,12 +18,16 @@ export default function SiteLayout() {
   return (
     <motion.div className="min-h-screen text-black" style={{ backgroundColor: bg }}>
       <div className="flex items-center justify-between px-10 py-6">
-        <div
-          className="font-bold tracking-tight"
-          style={{ fontSize: "1.5rem", fontFamily: "Kinta, sans-serif" }}
-        >
-          MKG Digital Management
-        </div>
+        
+<Link
+  to="/"
+  className="font-bold tracking-tight hover:opacity-80 transition"
+  style={{ fontSize: "1.5rem", fontFamily: "Kinta, sans-serif" }}
+>
+  MKG Digital Management
+</Link>
+
+
         <Navbar />
       </div>
 
