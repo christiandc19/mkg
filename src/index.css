@@ -65,3 +65,43 @@
     transform: translateX(0);
   }
 }
+
+
+/*  */
+
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.intro-bg {
+  position: absolute;
+  inset: 0;
+  background: #0b0b0e; /* dark */
+}
+
+.intro-text {
+  position: relative;
+  z-index: 2;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: white;
+
+  /* Key trick: make text responsive, and keep it on one line */
+  white-space: nowrap;
+  font-size: clamp(42px, 10vw, 140px);
+  line-height: 0.9;
+  will-change: transform;
+}
+
+.intro-wipe {
+  position: absolute;
+  inset: 0;
+  background: #0b0b0e; /* same as bg */
+  z-index: 3;
+}
