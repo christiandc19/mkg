@@ -1,12 +1,23 @@
+// src/pages/Home.jsx
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-
+import { motion, AnimatePresence } from "framer-motion";
+import FeasibilityStudiesCarousel from "../components/home/FeasibilityStudiesCarousel";
+import { FEASIBILITY_STUDIES } from "../components/home/feasibilityStudiesData";
+import SystemPromo from "../components/home/SystemPromo";
+import DigitalAgencyHero from "../components/home/DigitalAgencyHero";
+import Person from "../assets/images/person.webp";   // <-- change filename to yours
+import City from "../assets/images/city.webp";       // optional
 import laptopGuy from "../assets/images/laptop-guy.png";
 import Imac from "../assets/images/imac.png";
+import AuthorityStrip from "../components/home/AuthorityStrip";
+import MKGOperatingSystem from "../components/home/MKGOperatingSystem";
+import MKGPrinciples from "../components/home/MKGPrinciples";
+import MKGWhoWeWorkWith from "../components/home/MKGWhoWeWorkWith";
+import ClientLogos from "../components/home/ClientLogos";
 
 import VideoSection from "../components/home/VideoSection";
 import TestimonialCarousel from "../components/home/TestimonialCarousel";
-import ScrollGrowText from "../components/home/ScrollGrowText";
 import Typewriter from "../components/home/Typewriter";
 
 import logo1 from "../assets/images/google.png";
@@ -24,6 +35,20 @@ import logo12 from "../assets/images/instagram.png";
 import logo13 from "../assets/images/facebook.png";
 import logo14 from "../assets/images/google_ads.png";
 
+import logo15 from "../assets/images/norwood-logo.png";
+import logo16 from "../assets/images/foxwood-logo.png";
+import logo17 from "../assets/images/oakdale-logo.png";
+import logo18 from "../assets/images/robin-logo.png";
+import logo19 from "../assets/images/asbury-logo.png";
+import logo20 from "../assets/images/canterbury-logo.png";
+import logo21 from "../assets/images/lighthouse-logo.png";
+import logo22 from "../assets/images/seneca-logo.png";
+import logo23 from "../assets/images/lakewood-logo.png";
+import logo24 from "../assets/images/embassy-logo.png";
+import logo25 from "../assets/images/vanadium-logo.png";
+
+
+
 // ---------- Helpers: Marquee ----------
 function MarqueeRow({ direction = "left", duration = 50, items = [] }) {
   const content = (
@@ -36,7 +61,9 @@ function MarqueeRow({ direction = "left", duration = 50, items = [] }) {
 
   return (
     <div
-      className={`marquee ${direction === "right" ? "marquee--right" : "marquee--left"}`}
+      className={`marquee ${
+        direction === "right" ? "marquee--right" : "marquee--left"
+      }`}
       style={{ ["--marquee-duration"]: `${duration}s` }}
     >
       <div className="marquee__track">
@@ -66,17 +93,19 @@ function MarqueeItem({ item }) {
 
 // ---------- Page ----------
 export default function Home() {
+  // Intro overlay: zoom out -> zoom in -> reveal page
+  const [introDone, setIntroDone] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setIntroDone(true), 2400);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
     <>
-      {/* ✅ NEW: Scroll-grow animation placed at the TOP */}
-<section className="relative h-screen w-full flex items-center justify-center overflow-visible px-5 sm:px-8 md:px-10">
-  <ScrollGrowText />
-</section>
-
-
 
       {/* HERO */}
-      <section className="px-5 sm:px-8 md:px-10 pb-20">
+      <section className="px-5 sm:px-8 md:px-10 pb-10">
         <div className="mx-auto max-w-6xl">
           <div className="mt-10 grid gap-10 md:grid-cols-[3fr_2fr] md:items-center">
             {/* Left */}
@@ -104,7 +133,9 @@ export default function Home() {
               </motion.div>
 
               <p className="mt-6 max-w-md text-black/70">
-                A full-service brand, media, and growth agency helping founders, companies, and creators turn attention into authority — and authority into revenue.
+                A full-service brand, media, and growth agency helping founders,
+                companies, and creators turn attention into authority — and
+                authority into revenue.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3 justify-center md:justify-start">
@@ -138,10 +169,31 @@ export default function Home() {
         </div>
       </section>
 
+
+
+
+<DigitalAgencyHero
+      personSrc={Person}
+      citySrc={City}
+      siteUrl="WWW.MEDIAKINGGROUP.COM"
+    />
+
+
+      <ClientLogos />
+      <AuthorityStrip />
+      <MKGOperatingSystem />
+      <MKGPrinciples />
+      <MKGWhoWeWorkWith />
+
+
+{/* <SystemPromo /> */}
+
+
+
       {/* ------------------------------------------------------- SUB-HERO POSITIONING ------------------------------------- */}
 
       {/* PHRASE */}
-      <section className="flex min-h-[55vh] md:min-h-[60vh] items-center justify-center px-5 sm:px-8 md:px-12">
+      {/* <section className="flex min-h-[55vh] md:min-h-[50vh] items-center justify-center px-5 sm:px-8 md:px-12">
         <div className="mx-auto w-full max-w-5xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -168,7 +220,10 @@ export default function Home() {
                 fontWeight: 400,
               }}
             >
-              Media King Group designs and operates high-performing digital ecosystems — brand identity, content engines, websites, funnels, and strategy — built to grow visibility, trust, and revenue over time.
+              Media King Group designs and operates high-performing digital
+              ecosystems — brand identity, content engines, websites, funnels,
+              and strategy — built to grow visibility, trust, and revenue over
+              time.
             </p>
           </motion.div>
 
@@ -181,7 +236,27 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
+
+
+
+      <FeasibilityStudiesCarousel
+        items={FEASIBILITY_STUDIES}
+        title=""
+        subtitle=""
+        maxItems={6}
+      />
+
+
+
+      {/* ------------------------------------------------------- Video ------------------------------------- */}
+      <VideoSection />
+
+
+
+
+
+
 
       {/* ------------------------------------------------------- MARQUEE ------------------------------------- */}
 
@@ -219,77 +294,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ------------------------------------------------------- Video ------------------------------------- */}
-      <VideoSection />
 
-      {/* ------------------------------------------------------- PHRASE ------------------------------------- */}
-      <section className="flex min-h-[55vh] md:min-h-[60vh] items-center justify-center px-5 sm:px-8 md:px-12">
-        <div className="mx-auto w-full max-w-5xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <p
-              className="leading-snug text-black/80"
-              style={{
-                fontSize: "clamp(1.6rem, 2.6vw, 2.3rem)",
-                fontFamily: "Kinta, sans-serif",
-                fontWeight: 400,
-              }}
-            >
-              Our mission is simple: Help clients excel in viral marketing, branding, and social media,
-              leading them to increased profitability. Media King Group has quickly emerged as a beacon for
-              people and businesses striving to make their mark in the ever-evolving landscape of branding,
-              marketing, and social media.
-            </p>
-          </motion.div>
-
-          <div className="mt-8">
-            <a
-              href="/about"
-              className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-black/60 hover:text-black transition"
-            >
-              Learn more about MKG <span aria-hidden>↗</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ------------------------------------------------------- MAC ------------------------------------- */}
-      <section className="px-5 sm:px-8 md:px-10 py-14 md:py-20 min-h-[100svh] flex items-center">
-        <div className="mx-auto w-full max-w-6xl">
-          <div className="grid gap-10 md:gap-14">
-            <div className="overflow-hidden rounded-2xl">
-              <img
-                src={Imac}
-                alt="Brand strategy notes"
-                className="w-full object-contain max-h-[70vh] mx-auto"
-              />
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-center"
-            >
-              <h2
-                className="leading-none tracking-tight"
-                style={{
-                  fontSize: "clamp(1.8rem, 5.5vw, 5rem)",
-                  fontFamily: "Kinta, sans-serif",
-                  fontWeight: 400,
-                }}
-              >
-                <Typewriter text="LET'S WORK TOGETHER" speed={85} />
-              </h2>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       <TestimonialCarousel />
     </>
