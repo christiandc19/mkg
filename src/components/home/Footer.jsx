@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden px-6 sm:px-10 pb-10 bg-[#c9ada7]">
+    <footer className="relative overflow-hidden px-6 sm:px-10 pb-10 bg-[white]">
       {/* Gradient overlay */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/25 via-transparent to-black/5" />
 
@@ -185,3 +185,5 @@ function FooterRouterLink({ to, children }) {
     </a>
   );
 }
+
+

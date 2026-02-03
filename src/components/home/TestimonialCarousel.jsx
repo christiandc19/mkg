@@ -33,7 +33,7 @@ export default function TestimonialCarousel() {
   }, []);
 
   return (
-    <section className="px-6 py-24">
+    <section className="px-6 py-24 bg-[white]">
       <div className="mx-auto max-w-3xl text-center">
         <AnimatePresence mode="wait">
           <motion.div

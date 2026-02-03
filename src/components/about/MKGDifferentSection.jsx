@@ -1,0 +1,104 @@
+// src/components/home/MKGDifferentSection.jsx
+import React from "react";
+import { motion } from "framer-motion";
+import laptopGuy from "../../assets/images/laptop-guy.png";
+
+export default function MKGDifferentSection({
+  imageSrc = laptopGuy,
+  imageAlt = "Media King Group — systems-first creative",
+}) {
+  return (
+    <section className="w-full bg-white px-6 py-24 sm:px-10">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
+          {/* LEFT: Copy */}
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="lg:col-span-7"
+          >
+            <div className="text-xs tracking-[0.3em] uppercase text-black/50">
+              WHAT MAKES US DIFFERENT
+            </div>
+
+            <h2
+              className="mt-4 text-3xl sm:text-4xl font-semibold tracking-tight text-black"
+              style={{ fontFamily: "Kinta, sans-serif" }}
+            >
+              Luxury Creative + Performance Strategy
+            </h2>
+
+            <p className="mt-3 max-w-2xl text-black/60 leading-relaxed">
+              We blend premium design with measurable outcomes.
+            </p>
+
+            {/* Differentiators */}
+            <div className="mt-8 grid gap-4">
+              <FeatureRow
+                title="Systems-First Thinking"
+                desc="Every decision supports scalability and consistency."
+              />
+              <FeatureRow
+                title="Full-Service Execution"
+                desc="Strategy, branding, content, development, and operations — under one roof."
+              />
+              <FeatureRow
+                title="Long-Term Partnerships"
+                desc="We don’t chase trends. We build infrastructure."
+              />
+            </div>
+
+            {/* Micro CTA */}
+            <div className="mt-10 flex flex-wrap items-center gap-3">
+              <a
+                href="/services"
+                className="inline-flex items-center gap-2 rounded-xl bg-black px-5 py-3 text-sm font-semibold text-[#F4F7F2] hover:opacity-90 transition"
+              >
+                See our services 
+              </a>
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#F4F7F2] px-5 py-3 text-sm font-semibold text-black ring-1 ring-black/10 hover:bg-white transition"
+              >
+                Book a call 
+              </a>
+            </div>
+          </motion.div>
+
+          {/* RIGHT: Image (no border, no overlay, no background, not cropped) */}
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.05 }}
+            className="lg:col-span-5"
+          >
+            <img
+              src={imageSrc}
+              alt={imageAlt}
+              className="w-full h-auto object-contain"
+              loading="lazy"
+            />
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FeatureRow({ title, desc }) {
+  return (
+    <div className="flex items-start gap-4 rounded-2xl bg-[#F4F7F2] p-5 ring-1 ring-black/10">
+      <div
+        className="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-black/70"
+        aria-hidden
+      />
+      <div>
+        <div className="text-sm font-semibold text-black">{title}</div>
+        <div className="mt-1 text-sm text-black/60 leading-relaxed">{desc}</div>
+      </div>
+    </div>
+  );
+}

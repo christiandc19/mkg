@@ -3,40 +3,76 @@ import React, { useMemo, useState } from "react";
 
 const DEFAULT_GROUPS = [
   {
-    key: "senior",
-    title: "Senior Living & Communities",
-    tagline: "Trust-first marketing that drives tours and occupancy.",
+    key: "entrepreneurs",
+    title: "Entrepreneurs & founders",
+    tagline: "Build the brand + system behind your next phase of growth.",
     desc:
-      "We build systems that make communities discoverable, credible, and easy to choose — websites, SEO, content, and conversion paths designed for families making high-stakes decisions.",
-    bullets: ["Tour-focused pages", "Local SEO + content", "Lead capture + follow-up"],
-    logos: ["Oakdale", "Asbury", "Seneca", "Lighthouse", "Lakewood", "Robin Run"],
+      "We help founders turn vision into a real operating system: clear positioning, a credible web presence, and a conversion path that makes it easy for the right people to say yes.",
+    bullets: ["Positioning + messaging", "High-converting website", "Content + lead capture"],
+    logos: ["Founders", "Startups", "Operators", "DTC", "B2B", "Local Leaders"],
   },
   {
-    key: "engineering",
-    title: "Engineering & Technical Firms",
-    tagline: "Credibility, clarity, and high-intent lead flow.",
+    key: "ceos",
+    title: "CEOs & leadership teams",
+    tagline: "Alignment, authority, and marketing that supports the business.",
     desc:
-      "Technical firms don’t need louder marketing — they need clearer positioning, proof, and case-study storytelling that converts serious buyers.",
-    bullets: ["Positioning + proof", "Case studies", "Proposal-ready assets"],
-    logos: ["Itanex", "Consulting", "Design", "Construction", "MEP", "Owners Rep"],
+      "For leadership teams, marketing shouldn’t be chaos. We create clarity across brand, site, and campaigns — so your team ships consistently and your market understands you instantly.",
+    bullets: ["Brand clarity + narrative", "Sales-ready assets", "Execution systems"],
+    logos: ["Leadership", "Strategy", "Exec Teams", "Scaling", "Operations", "Growth"],
   },
   {
-    key: "local",
-    title: "Local & Service Businesses",
-    tagline: "Conversion-first web + campaigns built for calls.",
+    key: "coaches",
+    title: "Coaches & consultants",
+    tagline: "Turn expertise into a structured offer ecosystem.",
     desc:
-      "We simplify the path to contact: fast pages, clear offers, and tracking so you know what’s working.",
-    bullets: ["Landing pages", "Local SEO", "Automation + tracking"],
-    logos: ["Home Services", "Clinics", "Trades", "Studios", "Agencies", "Local Retail"],
+      "You don’t need more content — you need a sharper offer and a clean path to conversion. We build the foundation that supports premium positioning and predictable demand.",
+    bullets: ["Offer strategy", "Funnel + booking flow", "Authority content system"],
+    logos: ["Advisors", "Consultants", "Coaches", "Strategists", "Speakers", "Educators"],
   },
   {
     key: "creators",
-    title: "Creators & Personal Brands",
-    tagline: "Turn attention into a structured offer ecosystem.",
+    title: "Creators & personal brands",
+    tagline: "Make attention sustainable — and convert it without burnout.",
     desc:
-      "Brand identity, offers, and content systems that support your long game — without burning out.",
-    bullets: ["Offer clarity", "Content system", "Website + funnel"],
-    logos: ["Creators", "Coaches", "Founders", "Speakers", "Educators", "Consultants"],
+      "We design brand identity, a clean digital home, and a content engine you can actually maintain — so your audience grows and your offers stay organized.",
+    bullets: ["Brand identity", "Website + funnel", "Content system + templates"],
+    logos: ["Creators", "Personal Brands", "Influencers", "Podcasters", "YouTubers", "Writers"],
+  },
+  {
+    key: "seniorliving",
+    title: "Senior living & healthcare organizations",
+    tagline: "Trust-first marketing for high-stakes decisions.",
+    desc:
+      "We build systems that make your organization discoverable, credible, and easy to choose — from websites and SEO to content and conversion paths designed for families and patients.",
+    bullets: ["Trust-building pages", "Local SEO + content", "Lead capture + follow-up"],
+    logos: ["Senior Living", "Healthcare", "Clinics", "Providers", "Care Teams", "Communities"],
+  },
+  {
+    key: "realestate",
+    title: "Real estate teams",
+    tagline: "A modern brand and a pipeline that compounds.",
+    desc:
+      "For teams that want consistency, we build a sharp online presence and a repeatable lead system — so you’re not relying on referrals alone to grow.",
+    bullets: ["High-converting listings + pages", "Local SEO + maps visibility", "Lead automation"],
+    logos: ["Teams", "Agents", "Brokerages", "Listings", "Investors", "Developers"],
+  },
+  {
+    key: "designbrands",
+    title: "Design, lifestyle, and consumer brands",
+    tagline: "Make the brand feel inevitable — then make it convert.",
+    desc:
+      "We pair clean design with performance. From storytelling and identity to ecommerce-ready flows, we build experiences that look premium and sell clearly.",
+    bullets: ["Brand + creative direction", "Shop + landing pages", "Retention + content"],
+    logos: ["Lifestyle", "Retail", "Ecommerce", "Design", "Wellness", "Home Goods"],
+  },
+  {
+    key: "media",
+    title: "Entertainment and media companies",
+    tagline: "Launch, grow, and monetize with a real system.",
+    desc:
+      "We help media brands package their value: clear positioning, scalable content workflows, and a digital ecosystem that supports partnerships, sponsorships, and launches.",
+    bullets: ["Content systems", "Monetization paths", "Launch + promo assets"],
+    logos: ["Studios", "Podcasts", "Production", "Publishers", "Creators", "Networks"],
   },
 ];
 
@@ -101,12 +137,8 @@ export default function MKGWhoWeWorkWith({
                     >
                       <div className="flex items-start justify-between gap-3">
                         <div>
-                          <div className="text-sm font-semibold text-black">
-                            {g.title}
-                          </div>
-                          <div className="mt-1 text-xs text-black/55">
-                            {g.tagline}
-                          </div>
+                          <div className="text-sm font-semibold text-black">{g.title}</div>
+                          <div className="mt-1 text-xs text-black/55">{g.tagline}</div>
                         </div>
 
                         {/* tiny indicator */}
@@ -179,9 +211,7 @@ export default function MKGWhoWeWorkWith({
                             style={{ backgroundColor: accent }}
                             aria-hidden
                           />
-                          <div className="text-sm font-semibold text-black/80">
-                            {b}
-                          </div>
+                          <div className="text-sm font-semibold text-black/80">{b}</div>
                         </div>
                       </div>
                     ))}
@@ -194,9 +224,7 @@ export default function MKGWhoWeWorkWith({
                     <div className="text-xs tracking-[0.25em] text-black/50 uppercase">
                       Past Clients / Categories
                     </div>
-                    <div className="text-xs text-black/45">
-                      (replace with real logos anytime)
-                    </div>
+                    <div className="text-xs text-black/45">(replace with real logos anytime)</div>
                   </div>
 
                   <div className="mt-4 flex flex-wrap gap-2">
@@ -219,10 +247,9 @@ export default function MKGWhoWeWorkWith({
                     </p>
                     <a
                       href="/contact"
-                      className="inline-flex w-fit items-center gap-2 rounded-xl bg-black px-4 py-2.5 text-sm font-semibold text-[#F4F7F2] hover:opacity-90 transition"
+                      className="inline-flex w-fit items-center gap-2 rounded-3xl bg-black px-4 py-2.5 text-sm font-semibold text-[#F4F7F2] hover:opacity-90 transition"
                     >
                       Start a project
-                      <span aria-hidden>↗</span>
                     </a>
                   </div>
                 </div>
@@ -231,7 +258,7 @@ export default function MKGWhoWeWorkWith({
 
             {/* Tiny helper: spacing variety */}
             <div className="mt-4 text-xs text-black/40">
-              Tip: this section intentionally breaks the “card grid” pattern to keep the page from feeling repetitive.
+              {/* Tip: this section intentionally breaks the “card grid” pattern to keep the page from feeling repetitive. */}
             </div>
           </div>
         </div>

@@ -9,6 +9,34 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 
+// ✅ Disable browser scroll restoration
+if ("scrollRestoration" in window.history) {
+  window.history.scrollRestoration = "manual";
+}
+
+// ✅ Force top immediately (helps most cases)
+window.scrollTo(0, 0);
+document.documentElement.scrollTop = 0;
+document.body.scrollTop = 0;
+
+// ✅ Force top AFTER the browser finishes restoring scroll (this fixes your case)
+window.addEventListener(
+  "load",
+  () => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    // One more tick for safety (fonts/images/layout shifts)
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }, 0);
+  },
+  { once: true }
+);
+
 const router = createHashRouter([
   {
     element: <SiteLayout />,

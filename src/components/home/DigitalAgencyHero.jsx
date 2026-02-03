@@ -3,7 +3,6 @@ import React from "react";
 export default function DigitalAgencyHero({
   personSrc,
   citySrc,
-  siteUrl = "WWW.MEDIATEKINGGROUP.COM",
 }) {
   return (
     <section className="w-full px-4 sm:px-8 py-12">
@@ -47,14 +46,9 @@ export default function DigitalAgencyHero({
               )}
 
               <div className="relative z-10 flex h-full flex-col justify-center px-8 py-10 sm:px-10">
-                <p className="ml-auto max-w-[220px] text-right text-lg font-semibold leading-snug text-black/70">
-                  Have an idea
-                  <br />
-                  or project?
-                </p>
+
 
                 <p className="mt-24 ml-auto text-xs tracking-[0.35em] text-black/40">
-                  {siteUrl}
                 </p>
               </div>
             </div>

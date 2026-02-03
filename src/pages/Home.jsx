@@ -315,7 +315,7 @@ export default function Home() {
       {/* ------------------------------------------------------- MARQUEE ------------------------------------- */}
 
       {/* LOGO MARQUEE */}
-      <section className="px-0 pb-24">
+      <section className="px-0 pb-24 bg-[#e9e0d9]">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 md:px-10">
           <div className="border-t border-black/10 pt-10" />
         </div>
@@ -344,13 +344,44 @@ export default function Home() {
         </div>
 
         <div className="mx-auto max-w-6xl px-10">
-          <div className="border-b border-black/10 mt-10" />
+          <div/>
         </div>
       </section>
 
 
 
       <TestimonialCarousel />
+
+
+{/* ------------------------------------------------------------------------------------------------- */}
+
+ {/* FINAL HOME CTA */}
+        <div className="flex flex-col items-center gap-6 pb-20 pt-20 bg-[#e9e0d9]">
+          <h2
+            className="text-3xl sm:text-4xl font-semibold text-black"
+            style={{ fontFamily: "Kinta, sans-serif" }}
+          >
+            Build the system that scales your brand.
+          </h2>
+
+          <p className="max-w-xl text-black/60">
+            Book a call and let’s architect your growth.
+          </p>
+
+          <a
+            href="/contact"
+            className="inline-flex items-center gap-2 rounded-3xl bg-black px-6 py-3 text-sm font-semibold text-[#F4F7F2] hover:opacity-90 transition"
+          >
+            Book a call
+          </a>
+        </div>
+
+
+
     </>
   );
 }
+
+
+
+

@@ -19,13 +19,14 @@ export default function SiteLayout() {
     <motion.div className="min-h-screen text-black" style={{ backgroundColor: bg }}>
       <div className="flex items-center justify-between px-10 py-6">
         
-        <Link
-          to="/"
-          className="font-bold tracking-tight hover:opacity-80 transition"
-          style={{ fontSize: "1.5rem", fontFamily: "Kinta, sans-serif" }}
-        >
-          MKG Digital Management
-        </Link>
+    <Link
+      to="/"
+      onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
+      className="font-bold tracking-tight hover:opacity-80 transition"
+      style={{ fontSize: "1.5rem", fontFamily: "Kinta, sans-serif" }}
+    >
+      MKG Digital Management
+    </Link>
 
 
         <Navbar />
