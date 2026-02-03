@@ -1,44 +1,48 @@
+import Beverly from '../../assets/images/beverly-hills-dentist.webp'
+import Design from '../../assets/images/design-brand.webp'
+import Outpatient from '../../assets/images/outpatient.webp'
+
 export const FEASIBILITY_STUDIES = [
   {
-    id: "asana",
-    title: "Asana Feasibility Study — HQ Retrofit",
+    id: "oakdale",
+    title: "Oakdale Seniors Alliance Feasibility Study.",
     description:
-      "We evaluated HVAC load profiles, electrical service capacity, and phasing constraints to support an accelerated retrofit timeline across occupied floors.",
-    client: "Asana",
+      "A multi-location senior living organization transformed from digital invisibility into a unified, lead-generating ecosystem.",
+    client: "Oakdale Seniors Alliance",
     cta: "Read the Feasibility Study",
     href: "#",
-    logoText: "asana",
-    logoType: "asana",
+    logoText: "Oakdale Seniors Alliance",
+    logoType: "oakdale",
     image:
-      "https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1400&q=80",
-    tags: ["HVAC", "Electrical", "Phasing"],
+      "https://i0.wp.com/oakdalesa.com/wp-content/uploads/2025/10/oakdale-hero-4-1.jpg?fit=1920%2C1250&ssl=1",
+    tags: ["Senior Living", "Independent Living", "Assisted Living"],
   },
   {
-    id: "smith",
-    title: "Smith Optics — New Production Line",
+    id: "beverly hills dentist",
+    title: "Beverly Hills Dentist — Feasibility Studies",
     description:
       "Site utility study, compressed air demand, and power distribution assessment to confirm readiness for new equipment commissioning.",
-    client: "Smith Optics",
+    client: "Beverly Hills Dentist",
     cta: "Read the Feasibility Study",
     href: "#",
-    logoText: "SMITH",
+    logoText: "BEVERLY HILLS DENTIST",
     logoType: "text",
     image:
-      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80",
+      Beverly,
     tags: ["Power", "Utilities", "Commissioning"],
   },
   {
-    id: "urban",
-    title: "Urban Campus — Mixed-Use Expansion",
+    id: "design",
+    title: "Design Brand — Feasibility Studies",
     description:
-      "Early-stage MEP feasibility, central plant options, and cost/risk modeling to support entitlement and investor diligence.",
-    client: "Urban Campus",
+      "A visual brand turned into a growth and sales engine through strategic media.",
+    client: "Design Brand",
     cta: "Read the Feasibility Study",
     href: "#",
-    logoText: "URBAN",
+    logoText: "Desgign Brand",
     logoType: "text",
     image:
-      "https://images.unsplash.com/photo-1529421308418-eab98863cee1?auto=format&fit=crop&w=1400&q=80",
+      Design,
     tags: ["Central Plant", "Cost Model", "Entitlements"],
   },
   {
@@ -66,7 +70,7 @@ export const FEASIBILITY_STUDIES = [
     logoText: "LIGHTHOUSE",
     logoType: "text",
     image:
-      "https://images.unsplash.com/photo-1581092919534-5a2d5b5b4b6b?auto=format&fit=crop&w=1400&q=80",
+      Outpatient,
     tags: ["Central Plant", "Healthcare", "Cost Model"],
   },
   {

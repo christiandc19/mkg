@@ -31,7 +31,7 @@ export default function ClientLogos({
   subtitle = "A few of the partners we’ve helped grow.",
 }) {
   return (
-    <section className="w-full px-4 sm:px-8 pt-20 pb-5 bg-[#F4F7F2]">
+    <section className="w-full px-4 sm:px-8 pt-20 pb-5 bg-[#c9ada7]">
       <div className="mx-auto w-[95%] lg:w-[90%]">
         {/* Header */}
         <div className="mb-10 text-center">

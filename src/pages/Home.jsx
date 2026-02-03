@@ -104,70 +104,74 @@ export default function Home() {
   return (
     <>
 
-      {/* HERO */}
-      <section className="px-5 sm:px-8 md:px-10 pb-10">
-        <div className="mx-auto max-w-6xl">
-          <div className="mt-10 grid gap-10 md:grid-cols-[3fr_2fr] md:items-center">
-            {/* Left */}
-            <div className="text-center md:text-left flex flex-col items-center md:items-start">
-              <p className="text-sm uppercase tracking-widest text-black/60">
-                We Build Brands, Media Systems, and Digital Ecosystems That Scale.
-              </p>
+{/* HERO */}
+<section className="relative px-5 sm:px-8 md:px-10 pb-10 overflow-hidden">
+  {/* Watermark */}
+  <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+    <div
+      className="select-none"
+      style={{
+        fontFamily: "Kinta, sans-serif",
+        fontWeight: 400,
+        fontSize: "clamp(10rem, 24vw, 30rem)",
+        lineHeight: 1,
+        opacity: 0.04,          // lighter than footer
+        letterSpacing: "-0.04em",
+      }}
+    >
+      MKG
+    </div>
+  </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="w-full"
-              >
-                <h1
-                  className="leading-none tracking-tight"
-                  style={{
-                    fontSize: "clamp(4rem, 7vw, 6rem)",
-                    fontFamily: "Kinta, sans-serif",
-                    fontWeight: 400,
-                  }}
-                >
-                  <Typewriter text="MEDIA KING GROUP" speed={90} />
-                </h1>
-              </motion.div>
+  {/* Content */}
+  <div className="relative z-10 mx-auto max-w-6xl">
+    <div className="mt-16 flex flex-col items-center text-center">
+      <p className="text-sm uppercase tracking-widest text-black/60">
+        We Build Brands, Media Systems, and Digital Ecosystems That Scale.
+      </p>
 
-              <p className="mt-6 max-w-md text-black/70">
-                A full-service brand, media, and growth agency helping founders,
-                companies, and creators turn attention into authority — and
-                authority into revenue.
-              </p>
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="w-full"
+      >
+        <h1
+          className="leading-none tracking-tight"
+          style={{
+            fontSize: "clamp(5rem, 9vw, 8rem)",
+            fontFamily: "Kinta, sans-serif",
+            fontWeight: 400,
+          }}
+        >
+          <Typewriter text="MEDIA KING GROUP" speed={90} />
+        </h1>
+      </motion.div>
 
-              <div className="mt-8 flex flex-wrap gap-3 justify-center md:justify-start">
-                <Link
-                  to="#"
-                  className="rounded-full bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-black/90"
-                >
-                  Book a Call
-                </Link>
+      <p className="mt-6 max-w-xl text-black/70">
+        A full-service brand, media, and growth agency helping founders,
+        companies, and creators turn attention into authority — and
+        authority into revenue.
+      </p>
 
-                <a
-                  href="#"
-                  className="rounded-full border border-black/20 px-6 py-3 text-sm font-semibold hover:bg-black/5"
-                >
-                  View Case Studies
-                </a>
-              </div>
-            </div>
+      <div className="mt-8 flex flex-wrap gap-3 justify-center">
+        <Link
+          to="#"
+          className="rounded-full bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-black/90"
+        >
+          Book a Call
+        </Link>
 
-            {/* Right image */}
-            <div className="flex justify-center md:justify-end">
-              <div className="overflow-hidden rounded-2xl max-w-md w-full">
-                <img
-                  src={laptopGuy}
-                  alt="Man working on a laptop"
-                  className="w-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        <a
+          href="#"
+          className="rounded-full border border-black/20 px-6 py-3 text-sm font-semibold hover:bg-black/5"
+        >
+          View Case Studies
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
@@ -179,10 +183,60 @@ export default function Home() {
     />
 
 
-      <ClientLogos />
+
+
+
+      {/* ------------------------------------------------------- MARQUEE ------------------------------------- */}
+
+      {/* LOGO MARQUEE */}
+      <section className="px-0 pb-24">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 md:px-10">
+          <div className="border-t border-black/10 pt-10" />
+        </div>
+
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 md:px-10 mt-8">
+          <MarqueeRow
+            direction="left"
+            duration={28}
+            items={[
+              { type: "logo", src: logo15, alt: "Norwood" },
+              { type: "logo", src: logo16, alt: "Foxwood" },
+              { type: "logo", src: logo17, alt: "Oakdale" },
+              { type: "logo", src: logo18, alt: "Robin" },
+              { type: "logo", src: logo19, alt: "Asbury" },
+              { type: "logo", src: logo20, alt: "Canterbury" },
+              { type: "logo", src: logo21, alt: "Lighthouse" },
+              { type: "logo", src: logo22, alt: "Seneca" },
+              { type: "logo", src: logo23, alt: "Lakewood" },
+              { type: "logo", src: logo24, alt: "Embassy" },
+              { type: "logo", src: logo25, alt: "Vanadium" },
+            ]}
+          />
+        </div>
+
+        <div className="mx-auto max-w-6xl px-10">
+          <div className="border-b border-black/10 mt-10" />
+        </div>
+      </section>
+
+{/* ----------------------------------------------------------------------------------------------------------------------- */}
+
+      <FeasibilityStudiesCarousel
+        items={FEASIBILITY_STUDIES}
+        title=""
+        subtitle=""
+        maxItems={6}
+      />
+
+
+{/* ----------------------------------------------------------------------------------------------------------------------- */}
+
+
+
+      {/* <ClientLogos /> */}
       <AuthorityStrip />
       <MKGOperatingSystem />
-      <MKGPrinciples />
+      {/* <MKGPrinciples /> */}
       <MKGWhoWeWorkWith />
 
 
@@ -239,18 +293,18 @@ export default function Home() {
       </section> */}
 
 
-
+{/* 
       <FeasibilityStudiesCarousel
         items={FEASIBILITY_STUDIES}
         title=""
         subtitle=""
         maxItems={6}
-      />
+      /> */}
 
 
 
       {/* ------------------------------------------------------- Video ------------------------------------- */}
-      <VideoSection />
+      {/* <VideoSection /> */}
 
 
 

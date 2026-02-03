@@ -57,7 +57,7 @@ export default function MKGWhoWeWorkWith({
   if (!safeGroups.length) return null;
 
   return (
-    <section className="w-full px-4 sm:px-8 py-16">
+    <section className="w-full px-4 sm:px-8 py-16 bg-[white]">
       <div className="mx-auto w-[95%] lg:w-[90%]">
         {/* Header */}
         <div className="mb-10">
