@@ -13,7 +13,7 @@ export default function MediaContentProduction() {
 
   return (
     <>
-    <section className="px-5 sm:px-8 md:px-10 py-20 bg-[#e9e0d9]">
+    <section className="px-5 sm:px-8 md:px-10 py-20">
       <div className="mx-auto max-w-5xl text-center">
         <p className="text-xs uppercase tracking-widest text-black/60">
           Media & Content Production
@@ -43,8 +43,9 @@ export default function MediaContentProduction() {
       </div>
     </section>
 
+<section className="bg-[#e9e0d9]">
 <ContactForm />
-
+</section>
 </>
 
 

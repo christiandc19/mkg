@@ -15,18 +15,19 @@ export default function Contact() {
                 <h1
                   className="leading-none tracking-tight text-left"
                   style={{
-                    fontSize: "clamp(2.5rem, 7vw, 6rem)",
+                    fontSize: "clamp(2.5rem, 7vw, 4rem)",
                     fontFamily: "Kinta, sans-serif",
                     fontWeight: 400,
                   }}
                 >
-                  <Typewriter text="CONTACT US" speed={90} />
+                  <Typewriter text="Let’s build the system behind your growth.
+" speed={90} />
                 </h1>
               </motion.div>
       </section>
 
 
-       <section >
+       <section className="bg-[#e9e0d9]">
             <ContactForm />
        </section>
       

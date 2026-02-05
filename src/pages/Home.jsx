@@ -254,75 +254,9 @@ export default function Home() {
 
 
 
-      {/* <ClientLogos /> */}
       <AuthorityStrip />
       <MKGOperatingSystem />
-      {/* <MKGPrinciples /> */}
       <MKGWhoWeWorkWith />
-
-
-{/* <SystemPromo /> */}
-
-
-
-      {/* ------------------------------------------------------- SUB-HERO POSITIONING ------------------------------------- */}
-
-      {/* PHRASE */}
-      {/* <section className="flex min-h-[55vh] md:min-h-[50vh] items-center justify-center px-5 sm:px-8 md:px-12">
-        <div className="mx-auto w-full max-w-5xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <p
-              className="leading-snug text-black/80"
-              style={{
-                fontSize: "clamp(1.6rem, 2.6vw, 1rem)",
-                fontFamily: "Kinta, sans-serif",
-                fontWeight: 400,
-              }}
-            >
-              Your brand doesn’t need more content. It needs a system.
-            </p>
-
-            <p
-              className="leading-snug text-black/80"
-              style={{
-                fontSize: "clamp(1.6rem, 2.6vw, 2rem)",
-                fontFamily: "Kinta, sans-serif",
-                fontWeight: 400,
-              }}
-            >
-              Media King Group designs and operates high-performing digital
-              ecosystems — brand identity, content engines, websites, funnels,
-              and strategy — built to grow visibility, trust, and revenue over
-              time.
-            </p>
-          </motion.div>
-
-          <div className="mt-8">
-            <a
-              href="/about"
-              className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-black/60 hover:text-black transition"
-            >
-              Learn more about MKG <span aria-hidden>↗</span>
-            </a>
-          </div>
-        </div>
-      </section> */}
-
-
-{/* 
-      <CaseStudiesCarousel
-        items={CASE_STUDIES}
-        title=""
-        subtitle=""
-        maxItems={6}
-      /> */}
-
-
 
 
 

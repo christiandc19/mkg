@@ -27,6 +27,8 @@ export default function BrandIdentity() {
           className="mt-3 text-3xl sm:text-4xl font-semibold leading-tight"
           style={{ fontFamily: "Kinta, sans-serif" }}
         >
+
+          
           We define how your brand looks, sounds, and feels.
         </motion.h2>
 
@@ -43,8 +45,9 @@ export default function BrandIdentity() {
       </div>
     </section>
 
-          <ContactForm/>
-
+<section className="bg-[#e9e0d9]">
+<ContactForm />
+</section>
     </>
   );
 }
