@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ContactForm from '../../components/home/ContactForm'
+import Collage from '../../components/services/MediaProductionCollage'
 
 export default function MediaContentProduction() {
   const items = [
@@ -30,21 +31,15 @@ export default function MediaContentProduction() {
           We build content engines, not just posts.
         </motion.h2>
 
-        <div className="mt-10 grid gap-3 sm:grid-cols-2">
-          {items.map((item) => (
-            <div
-              key={item}
-              className="rounded-2xl border border-black/10 bg-white/60 backdrop-blur p-4 text-left transition hover:bg-white/80 hover:shadow-sm"
-            >
-              <p className="font-semibold text-black/90">{item}</p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
 
+
+<Collage />
+
 <section className="bg-[#e9e0d9]">
 <ContactForm />
+
 </section>
 </>
 
