@@ -1,5 +1,6 @@
 // src/components/home/MKGDifferentSection.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import laptopGuy from "../../assets/images/laptop-guy.png";
 
@@ -52,18 +53,14 @@ export default function MKGDifferentSection({
 
             {/* Micro CTA */}
             <div className="mt-10 flex flex-wrap items-center gap-3">
-              <a
-                href="/services"
-                className="inline-flex items-center gap-2 rounded-xl bg-black px-5 py-3 text-sm font-semibold text-[#F4F7F2] hover:opacity-90 transition"
-              >
-                See our services 
-              </a>
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#F4F7F2] px-5 py-3 text-sm font-semibold text-black ring-1 ring-black/10 hover:bg-white transition"
-              >
+              <Link
+                to="/contact"
+                      onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
+                      className="rounded-full border border-black/20 px-6 py-3 text-sm font-semibold hover:bg-black/5"
+                      >
+                            
                 Book a call 
-              </a>
+              </Link>
             </div>
           </motion.div>
 

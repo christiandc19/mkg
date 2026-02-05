@@ -1,5 +1,6 @@
 // src/components/home/MKGWhoWeWorkWith.jsx
 import React, { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 
 const DEFAULT_GROUPS = [
   {
@@ -187,14 +188,7 @@ export default function MKGWhoWeWorkWith({
                     </p>
                   </div>
 
-                  {/* CTA chip */}
-                  <a
-                    href="/services"
-                    className="inline-flex w-fit items-center gap-2 rounded-2xl bg-[#F4F7F2] px-4 py-2.5 text-sm font-semibold text-black ring-1 ring-black/10 hover:bg-white/70 transition"
-                  >
-                    What we build
-                    <span aria-hidden>↗</span>
-                  </a>
+
                 </div>
 
                 {/* Bullets */}
@@ -245,12 +239,13 @@ export default function MKGWhoWeWorkWith({
                     <p className="text-sm text-black/60">
                       Want your industry added here with real case studies and proof?
                     </p>
-                    <a
-                      href="/contact"
-                      className="inline-flex w-fit items-center gap-2 rounded-3xl bg-black px-4 py-2.5 text-sm font-semibold text-[#F4F7F2] hover:opacity-90 transition"
+                    <Link
+                      to="contact"
+                      onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
+                      className="rounded-full bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-black/90"
                     >
                       Start a project
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

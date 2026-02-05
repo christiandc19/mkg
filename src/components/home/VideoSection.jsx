@@ -19,7 +19,7 @@ export default function VideoSection() {
   }, [line1Duration]);
 
   return (
-    <section className="px-6 sm:px-10 py-20">
+    <section className="px-6 sm:px-10 py-20 bg-white">
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl">
         {/* Video */}
         <video

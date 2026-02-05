@@ -318,12 +318,13 @@ export default function Home() {
             Book a call and let’s architect your growth.
           </p>
 
-          <a
-            href="/contact"
-            className="inline-flex items-center gap-2 rounded-3xl bg-black px-6 py-3 text-sm font-semibold text-[#F4F7F2] hover:opacity-90 transition"
-          >
+    <Link
+      to="contact"
+      onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
+      className="rounded-full bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-black/90"
+    >
             Book a call
-          </a>
+        </Link>
         </div>
 
 

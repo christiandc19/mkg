@@ -2,7 +2,6 @@ import MKGStory from '../components/about/MKGStorySection'
 import MKGMission from '../components/about/MKGMissionSection'
 import MKGDifferent from '../components/about/MKGDifferentSection'
 import MKGThink from '../components/about/MKGHowWeThink'
-import laptopGuy from "../assets/images/laptop-guy.png";
 
 export default function About() {
   return (

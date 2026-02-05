@@ -155,7 +155,7 @@ export default function CaseStudies() {
   return (
     <main className="w-full">
       {/* HERO */}
-      <section className="w-full bg-[#F4F7F2]">
+      <section className="w-full">
         <div className="mx-auto w-[90%] max-w-6xl py-20 sm:py-24">
           <div className="max-w-2xl">
             <p className="text-sm tracking-wide text-black/60">
@@ -173,12 +173,7 @@ export default function CaseStudies() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#case-studies"
-                className="inline-flex items-center justify-center rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:opacity-90"
-              >
-                Browse Case Studies
-              </a>
+
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center rounded-full border border-black/15 bg-white px-6 py-3 text-sm font-medium text-black/70 hover:text-black"
@@ -191,14 +186,14 @@ export default function CaseStudies() {
       </section>
 
       {/* DIVIDER */}
-      <section className="w-full bg-white">
+      <section className="w-full bg-[#e9e0d9]">
         <div className="mx-auto w-[90%] max-w-6xl py-10">
           <div className="border-t border-black/10" />
         </div>
       </section>
 
       {/* GRID */}
-      <section id="case-studies" className="w-full bg-white">
+      <section id="case-studies" className="w-full bg-[#e9e0d9]">
         <div className="mx-auto w-[90%] max-w-6xl pb-24">
           <div className="mb-8">
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">

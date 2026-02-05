@@ -81,6 +81,7 @@ export default function Services() {
   return (
 
     <>
+    <section>
         <div className="px-5 sm:px-8 md:px-10 py-16 md:py-20 mx-auto max-w-6xl">
         <motion.div
           initial="hidden"
@@ -125,7 +126,7 @@ export default function Services() {
 
 
 
-
+</section>
 
 
 

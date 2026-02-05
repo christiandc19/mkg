@@ -31,20 +31,6 @@ export default function Contact() {
             <ContactForm />
        </section>
       
-
-
-
-      {/* Add more “About” content here later */}
-      <section className="px-10 py-16">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-3xl" style={{ fontFamily: "Kinta, sans-serif" }}>
-            About MKG
-          </h2>
-          <p className="mt-4 text-black/70">
-            Add your story, services overview, approach, and proof here.
-          </p>
-        </div>
-      </section>
     </>
   );
 }

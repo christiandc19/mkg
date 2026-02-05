@@ -162,7 +162,7 @@ export default function CaseStudiesCarousel({
   }
 
 return (
-  <section className="w-full px-4 sm:px-8 py-16 bg-[#c9ada7] overflow-x-hidden">
+  <section className="w-full px-4 sm:px-8 py-16 overflow-x-hidden bg-[#e9e0d9]">
     <div className="mx-auto w-[95%] lg:w-[100%]">
       <div className="mb-8 flex flex-col gap-2">
         <h2 className="text-2xl sm:text-3xl font-semibold">{title}</h2>
