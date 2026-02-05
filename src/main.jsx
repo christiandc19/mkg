@@ -10,6 +10,7 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import Case from "./pages/CaseStudies";
 
 
 // ✅ Disable browser scroll restoration
@@ -50,6 +51,7 @@ const router = createHashRouter([
       { path: "/contact", element: <Contact /> },
       { path: "/privacy", element: <Privacy /> },
       { path: "/terms", element: <Terms /> },
+      { path: "/case-studies", element: <Case /> },
 
 
     ],

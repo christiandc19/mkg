@@ -131,6 +131,7 @@ export default function Navbar() {
                   <MenuLink variants={itemVariants} label="Home" onClick={() => goTo("/")} />
                   <MenuLink variants={itemVariants} label="About" onClick={() => goTo("/about")} />
                   <MenuLink variants={itemVariants} label="Service" onClick={() => goTo("/services")} />
+                  <MenuLink variants={itemVariants} label="Case Studies" onClick={() => goTo("/case-studies")} />
                   <MenuLink variants={itemVariants} label="Contact" onClick={() => goTo("/contact")} />
                 </nav>
 

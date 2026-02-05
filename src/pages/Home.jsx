@@ -8,13 +8,9 @@ import SystemPromo from "../components/home/SystemPromo";
 import DigitalAgencyHero from "../components/home/DigitalAgencyHero";
 import Person from "../assets/images/person.webp";   // <-- change filename to yours
 import Flow from "../assets/images/flow.png";       // optional
-import laptopGuy from "../assets/images/laptop-guy.png";
-import Imac from "../assets/images/imac.png";
 import AuthorityStrip from "../components/home/AuthorityStrip";
 import MKGOperatingSystem from "../components/home/MKGOperatingSystem";
-import MKGPrinciples from "../components/home/MKGPrinciples";
 import MKGWhoWeWorkWith from "../components/home/MKGWhoWeWorkWith";
-import ClientLogos from "../components/home/ClientLogos";
 
 import VideoSection from "../components/home/VideoSection";
 import TestimonialCarousel from "../components/home/TestimonialCarousel";
@@ -155,19 +151,23 @@ export default function Home() {
       </p>
 
       <div className="mt-8 flex flex-wrap gap-3 justify-center">
-        <Link
-          to="#"
-          className="rounded-full bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-black/90"
-        >
-          Book a Call
+
+    <Link
+      to="contact"
+      onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
+      className="rounded-full bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-black/90"
+    >
+      Book a Call
         </Link>
 
-        <a
-          href="#"
-          className="rounded-full border border-black/20 px-6 py-3 text-sm font-semibold hover:bg-black/5"
-        >
-          View Case Studies
-        </a>
+
+    <Link
+      to="case-studies"
+      onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
+      className="rounded-full border border-black/20 px-6 py-3 text-sm font-semibold hover:bg-black/5"
+    >
+      View Case Studies
+        </Link>
       </div>
     </div>
   </div>
