@@ -7,6 +7,9 @@ import SiteLayout from "./layouts/SiteLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
+import BrandIdentity from "./components/services/BrandIdentity";
+import MediaContentProduction from "./components/services/MediaContentProduction";
+
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -48,6 +51,9 @@ const router = createHashRouter([
       { path: "/", element: <Home /> },
       { path: "/about", element: <About /> },
       { path: "/services", element: <Services /> },
+      { path: "/brand-identity", element: <BrandIdentity /> },
+      { path: "/media-content-production", element: <MediaContentProduction /> },
+
       { path: "/contact", element: <Contact /> },
       { path: "/privacy", element: <Privacy /> },
       { path: "/terms", element: <Terms /> },
