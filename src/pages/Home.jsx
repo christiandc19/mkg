@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import FeasibilityStudiesCarousel from "../components/home/FeasibilityStudiesCarousel";
-import { FEASIBILITY_STUDIES } from "../components/home/feasibilityStudiesData";
+import CaseStudiesCarousel from "../components/home/CaseStudiesCarousel";
+import { CASE_STUDIES } from "../components/home/CaseStudiesData";
 import SystemPromo from "../components/home/SystemPromo";
 import DigitalAgencyHero from "../components/home/DigitalAgencyHero";
 import Person from "../assets/images/person.webp";   // <-- change filename to yours
@@ -240,10 +240,10 @@ export default function Home() {
 
 
 
-{/* ------------------------------------------------- FEASIBILITY STUDIES ---------------------------------------------------------------------- */}
+{/* ------------------------------------------------- CASE STUDIES ---------------------------------------------------------------------- */}
 
-      <FeasibilityStudiesCarousel
-        items={FEASIBILITY_STUDIES}
+      <CaseStudiesCarousel
+        items={CASE_STUDIES}
         title=""
         subtitle=""
         maxItems={6}
@@ -315,8 +315,8 @@ export default function Home() {
 
 
 {/* 
-      <FeasibilityStudiesCarousel
-        items={FEASIBILITY_STUDIES}
+      <CaseStudiesCarousel
+        items={CASE_STUDIES}
         title=""
         subtitle=""
         maxItems={6}

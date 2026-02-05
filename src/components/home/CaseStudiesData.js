@@ -2,14 +2,14 @@ import Beverly from '../../assets/images/beverly-hills-dentist.webp'
 import Design from '../../assets/images/design-brand.webp'
 import Outpatient from '../../assets/images/outpatient.webp'
 
-export const FEASIBILITY_STUDIES = [
+export const CASE_STUDIES = [
   {
     id: "oakdale",
-    title: "Oakdale Seniors Alliance Feasibility Study.",
+    title: "Oakdale Seniors Alliance Case Study.",
     description:
       "A multi-location senior living organization transformed from digital invisibility into a unified, lead-generating ecosystem.",
     client: "Oakdale Seniors Alliance",
-    cta: "Read the Feasibility Study",
+    cta: "Read the Case Study",
     href: "#",
     logoText: "Oakdale Seniors Alliance",
     logoType: "oakdale",
@@ -19,11 +19,11 @@ export const FEASIBILITY_STUDIES = [
   },
   {
     id: "beverly hills dentist",
-    title: "Beverly Hills Dentist — Feasibility Studies",
+    title: "Beverly Hills Dentist — Case Studies",
     description:
       "Site utility study, compressed air demand, and power distribution assessment to confirm readiness for new equipment commissioning.",
     client: "Beverly Hills Dentist",
-    cta: "Read the Feasibility Study",
+    cta: "Read the Case Study",
     href: "#",
     logoText: "BEVERLY HILLS DENTIST",
     logoType: "text",
@@ -33,11 +33,11 @@ export const FEASIBILITY_STUDIES = [
   },
   {
     id: "design",
-    title: "Design Brand — Feasibility Studies",
+    title: "Design Brand — Case Studies",
     description:
       "A visual brand turned into a growth and sales engine through strategic media.",
     client: "Design Brand",
-    cta: "Read the Feasibility Study",
+    cta: "Read the Case Study",
     href: "#",
     logoText: "Desgign Brand",
     logoType: "text",
@@ -51,7 +51,7 @@ export const FEASIBILITY_STUDIES = [
     description:
       "Electrical demand modeling and HVAC zoning strategies to support a phased warehouse modernization program.",
     client: "Delta Logistics",
-    cta: "Read the Feasibility Study",
+    cta: "Read the Case Study",
     href: "#",
     logoText: "DELTA",
     logoType: "text",
@@ -65,7 +65,7 @@ export const FEASIBILITY_STUDIES = [
     description:
       "Central plant options, redundancy analysis, and cost modeling for a new outpatient healthcare campus.",
     client: "Lighthouse Health",
-    cta: "Read the Feasibility Study",
+    cta: "Read the Case Study",
     href: "#",
     logoText: "LIGHTHOUSE",
     logoType: "text",
@@ -79,7 +79,7 @@ export const FEASIBILITY_STUDIES = [
     description:
       "Power redundancy, cooling strategies, and risk analysis for a new mission-critical data operations facility.",
     client: "Northstar Data",
-    cta: "Read the Feasibility Study",
+    cta: "Read the Case Study",
     href: "#",
     logoText: "NORTHSTAR",
     logoType: "text",

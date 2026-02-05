@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
-export default function FeasibilityStudiesCarousel({
+export default function CaseStudiesCarousel({
   items = [],
-  title = "Feasibility Studies",
-  subtitle = "A carousel of feasibility studies from past clients.",
+  title = "Case Studies",
+  subtitle = "A carousel of Case studies from past clients.",
   maxItems = 6,
 }) {
   const baseItems = useMemo(
@@ -153,7 +153,7 @@ export default function FeasibilityStudiesCarousel({
           <h2 className="text-2xl sm:text-3xl font-semibold">{title}</h2>
           <p className="mt-2 text-black/60">{subtitle}</p>
           <div className="mt-6 rounded-2xl border border-dashed border-black/20 p-8 text-black/60">
-            No feasibility studies yet. Pass an{" "}
+            No Case studies yet. Pass an{" "}
             <code className="text-black">items</code> array to this component.
           </div>
         </div>
@@ -231,7 +231,7 @@ return (
                 key={s._loopKey}
                 data-loop-index={loopIdx}
                 className="snap-center shrink-0 w-full min-w-full"
-                aria-label={`${s.client ?? "Client"} feasibility study`}
+                aria-label={`${s.client ?? "Client"} Case study`}
               >
                 {/* ✅ Inner gutter keeps spacing without revealing neighbors */}
                 <div className="px-4 sm:px-8 py-2">
@@ -275,7 +275,7 @@ return (
                               href={s.href}
                               className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-black/60 hover:text-black"
                             >
-                              {s.cta ?? "Read the Feasibility Study"}
+                              {s.cta ?? "Read the Case Study"}
                               <span aria-hidden>→</span>
                             </a>
                           ) : null}
