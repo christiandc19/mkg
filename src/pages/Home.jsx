@@ -176,6 +176,8 @@ export default function Home() {
 
 
 
+
+{/* ------------------------------------------- BANNER --------------------------------------------------------- */}
 <DigitalAgencyHero
       personSrc={Person}
       citySrc={City}
@@ -185,41 +187,60 @@ export default function Home() {
 
 
 
-
       {/* ------------------------------------------------------- MARQUEE ------------------------------------- */}
 
-      {/* LOGO MARQUEE */}
-      <section className="px-0 pb-24">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8 md:px-10">
-          <div className="border-t border-black/10 pt-10" />
-        </div>
+{/* LOGO MARQUEE */}
+<section className="pb-24 pt-24 bg-[#e9e0d9]">
+  <div className="w-[90%] mx-auto">
+    {/* Top line */}
+    <div className="border-t border-black/10 pt-10" />
 
-        <div className="mx-auto max-w-6xl px-5 sm:px-8 md:px-10 mt-8">
-          <MarqueeRow
-            direction="left"
-            duration={28}
-            items={[
-              { type: "logo", src: logo15, alt: "Norwood" },
-              { type: "logo", src: logo16, alt: "Foxwood" },
-              { type: "logo", src: logo17, alt: "Oakdale" },
-              { type: "logo", src: logo18, alt: "Robin" },
-              { type: "logo", src: logo19, alt: "Asbury" },
-              { type: "logo", src: logo20, alt: "Canterbury" },
-              { type: "logo", src: logo21, alt: "Lighthouse" },
-              { type: "logo", src: logo22, alt: "Seneca" },
-              { type: "logo", src: logo23, alt: "Lakewood" },
-              { type: "logo", src: logo24, alt: "Embassy" },
-              { type: "logo", src: logo25, alt: "Vanadium" },
-            ]}
-          />
-        </div>
+    {/* Marquee */}
+    <div className="mt-8 overflow-hidden">
+      <MarqueeRow
+        direction="left"
+        duration={28}
+        items={[
+          { type: "logo", src: logo15, alt: "Norwood" },
+          { type: "logo", src: logo16, alt: "Foxwood" },
+          { type: "logo", src: logo17, alt: "Oakdale" },
+          { type: "logo", src: logo18, alt: "Robin" },
+          { type: "logo", src: logo19, alt: "Asbury" },
+          { type: "logo", src: logo20, alt: "Canterbury" },
+          { type: "logo", src: logo21, alt: "Lighthouse" },
+          { type: "logo", src: logo22, alt: "Seneca" },
+          { type: "logo", src: logo23, alt: "Lakewood" },
+          { type: "logo", src: logo24, alt: "Embassy" },
+          { type: "logo", src: logo25, alt: "Vanadium" },
+        ]}
+      />
+    </div>
 
-        <div className="mx-auto max-w-6xl px-10">
-          <div className="border-b border-black/10 mt-10" />
-        </div>
-      </section>
+    {/* Bottom line */}
+    <div className="border-b border-black/10 mt-10" />
+  </div>
+</section>
 
-{/* ----------------------------------------------------------------------------------------------------------------------- */}
+
+
+
+
+
+
+      {/* ------------------------------------------------------- Video ------------------------------------- */}
+      <VideoSection />
+
+
+
+
+
+
+
+
+
+
+
+{/* ------------------------------------------------- FEASIBILITY STUDIES ---------------------------------------------------------------------- */}
 
       <FeasibilityStudiesCarousel
         items={FEASIBILITY_STUDIES}
@@ -300,11 +321,6 @@ export default function Home() {
         subtitle=""
         maxItems={6}
       /> */}
-
-
-
-      {/* ------------------------------------------------------- Video ------------------------------------- */}
-      {/* <VideoSection /> */}
 
 
 

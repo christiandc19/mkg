@@ -97,7 +97,7 @@ export default function Navbar() {
               exit="closed"
               className="fixed right-0 top-0 z-50 h-screen w-[92vw] sm:w-[70vw] md:w-1/3"
               style={{
-                backgroundColor: "#ffc107",
+                backgroundColor: "#e9e0d9",
                 fontFamily: "zuume, sans-serif",
                 fontWeight: 400,
                 color: "#000",

@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import Typewriter from "./Typewriter"; // adjust path if needed
 
 export default function VideoSection() {
-  const videoSrc = `${import.meta.env.BASE_URL}video/mkg.mp4`;
+  const videoSrc = `${import.meta.env.BASE_URL}video/reel.mp4`;
 
   const line1 = "be seen.";
-  const line2 = "achieve growth.";
+  const line2 = "BE SEEN.";
 
   const speed = 80;
   const line1Duration = line1.length * speed;
@@ -37,22 +37,7 @@ export default function VideoSection() {
         {/* Text overlay */}
         <div className="absolute inset-0 z-10 flex items-center justify-center px-6 text-center">
           <div className="leading-tight text-white">
-            <div
-              style={{
-                fontFamily: "Kinta, sans-serif",
-                fontWeight: 400,
-                fontSize: "clamp(1.8rem, 4vw, 2rem)",
-                letterSpacing: "-0.01em",
-              }}
-            >
-              {/* Cursor stops after "be seen." */}
-              <Typewriter
-                text={line1}
-                speed={speed}
-                cursor
-                stopCursorOnDone
-              />
-            </div>
+
 
             <div
               style={{
