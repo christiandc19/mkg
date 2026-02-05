@@ -5,7 +5,7 @@ export default function VideoSection() {
   const videoSrc = `${import.meta.env.BASE_URL}video/video.mp4`;
 
   const line1 = "be seen.";
-  const line2 = "BE SEEN.";
+  const line2 = "DIRECTING BRANDS FOR IMPACT..";
 
   const speed = 80;
   const line1Duration = line1.length * speed;
@@ -43,7 +43,7 @@ export default function VideoSection() {
               style={{
                 fontFamily: "Kinta, sans-serif",
                 fontWeight: 400,
-                fontSize: "clamp(2.8rem, 6vw, 5rem)",
+                fontSize: "clamp(2rem, 6vw, 3rem)",
                 letterSpacing: "-0.02em",
                 marginTop: "-0.2em",
                 minHeight: "1.1em",

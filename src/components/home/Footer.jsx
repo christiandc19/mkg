@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -46,6 +47,14 @@ export default function Footer() {
           <div className="grid gap-12 md:grid-cols-3">
             {/* Brand */}
             <div>
+
+    <Link
+      to="/"
+      onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
+      className="font-bold tracking-tight hover:opacity-80 transition"
+      style={{ fontSize: "1.5rem", fontFamily: "Kinta, sans-serif" }}
+    >
+
               <div
                 className="tracking-tight leading-none"
                 style={{
@@ -56,6 +65,10 @@ export default function Footer() {
               >
                 MKG Digital Management
               </div>
+    </Link>
+
+
+
 
               <p className="mt-6 max-w-sm text-base text-black/70">
                 Minimal systems. Measurable growth. Human-led digital management built to last.

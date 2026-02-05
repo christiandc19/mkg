@@ -147,12 +147,7 @@ export default function Navbar() {
                     label="News & Stories"
                     onClick={() => goTo("#news")}
                   />
-                  <MenuLink variants={itemVariants} label="Shop" onClick={() => goTo("#shop")} />
-                  <MenuLink
-                    variants={itemVariants}
-                    label="Enquiries"
-                    onClick={() => goTo("#contact")}
-                  />
+
                 </nav>
               </motion.div>
             </motion.aside>

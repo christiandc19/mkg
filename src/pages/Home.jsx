@@ -7,7 +7,7 @@ import { FEASIBILITY_STUDIES } from "../components/home/feasibilityStudiesData";
 import SystemPromo from "../components/home/SystemPromo";
 import DigitalAgencyHero from "../components/home/DigitalAgencyHero";
 import Person from "../assets/images/person.webp";   // <-- change filename to yours
-import City from "../assets/images/city.webp";       // optional
+import Flow from "../assets/images/flow.png";       // optional
 import laptopGuy from "../assets/images/laptop-guy.png";
 import Imac from "../assets/images/imac.png";
 import AuthorityStrip from "../components/home/AuthorityStrip";
@@ -180,7 +180,7 @@ export default function Home() {
 {/* ------------------------------------------- BANNER --------------------------------------------------------- */}
 <DigitalAgencyHero
       personSrc={Person}
-      citySrc={City}
+      citySrc={Flow}
       siteUrl="WWW.MEDIAKINGGROUP.COM"
     />
 
