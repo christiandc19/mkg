@@ -2,9 +2,8 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import ServicesSection from '../components/services/ServicesSection.jsx'
-import { useNavigate } from "react-router-dom";
-import  BrandIdentity from '../components/services/BrandIdentity.jsx';
-import  MediaContent from '../components/services/MediaContentProduction.jsx';
+import ContactForm from '../components/home/ContactForm.jsx'
+
 
 const services = [
   {
@@ -117,7 +116,7 @@ export default function Services() {
 
 <ServicesSection/>
 
-
+<ContactForm />
 
 
 

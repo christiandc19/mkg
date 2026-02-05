@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import ContactForm from '../../components/home/ContactForm'
 
 export default function BrandIdentity() {
   const items = [
@@ -11,6 +12,7 @@ export default function BrandIdentity() {
   ];
 
   return (
+    <>
     <section className="px-5 sm:px-8 md:px-10 py-20">
       <div className="mx-auto max-w-5xl text-center">
         <p className="text-xs uppercase tracking-widest text-black/60">
@@ -40,5 +42,9 @@ export default function BrandIdentity() {
         </div>
       </div>
     </section>
+
+          <ContactForm/>
+
+    </>
   );
 }

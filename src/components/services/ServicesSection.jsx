@@ -67,7 +67,7 @@ export default function ServicesSection() {
               {/* ✅ CTA Button as Link */}
               <div className="mt-8">
                 <Link
-                  to="brand-identity"
+                  to="/brand-identity"
                   onClick={scrollTop}
                   className="
                     inline-flex items-center justify-center gap-2
