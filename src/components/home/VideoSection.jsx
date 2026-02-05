@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Typewriter from "./Typewriter"; // adjust path if needed
 
 export default function VideoSection() {
-  const videoSrc = `${import.meta.env.BASE_URL}video/reel.mp4`;
+  const videoSrc = `${import.meta.env.BASE_URL}video/vid.mp4`;
 
   const line1 = "be seen.";
   const line2 = "BE SEEN.";
