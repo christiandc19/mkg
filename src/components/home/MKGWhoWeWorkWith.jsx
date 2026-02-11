@@ -81,7 +81,7 @@ export default function MKGWhoWeWorkWith({
   title = "Who We Work With",
   subtitle = "Different industries. Same outcome: a system that compounds.",
   groups = DEFAULT_GROUPS,
-  accent = "#5D8AA8", // optional subtle accent (safe with your palette)
+  accent = "#5D8AA8",
 }) {
   const safeGroups = useMemo(() => groups ?? [], [groups]);
   const [activeKey, setActiveKey] = useState(safeGroups?.[0]?.key ?? "");
@@ -94,26 +94,29 @@ export default function MKGWhoWeWorkWith({
   if (!safeGroups.length) return null;
 
   return (
-    <section className="w-full px-4 sm:px-8 py-16 bg-[white]">
-      <div className="mx-auto w-[95%] lg:w-[90%]">
+    <section className="relative w-full px-4 sm:px-8 py-16 overflow-hidden bg-gradient-to-tr from-black via-[#0e0e0f] to-[#1c1c1f] text-white">
+      {/* subtle depth glow */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.05),transparent_45%)]" />
+
+      <div className="relative mx-auto w-[95%] lg:w-[90%]">
         {/* Header */}
         <div className="mb-10">
           <h2
-            className="text-3xl sm:text-4xl font-semibold tracking-tight text-black"
+            className="text-3xl sm:text-4xl font-semibold tracking-tight text-white"
             style={{ fontFamily: "Kinta, sans-serif" }}
           >
             {title}
           </h2>
-          <p className="mt-3 max-w-2xl text-black/60 leading-relaxed">{subtitle}</p>
+          <p className="mt-3 max-w-2xl text-white/60 leading-relaxed">{subtitle}</p>
         </div>
 
         {/* Split Layout */}
         <div className="grid gap-6 lg:grid-cols-12">
           {/* LEFT: Tabs */}
           <div className="lg:col-span-4">
-            <div className="rounded-3xl bg-[#F4F7F2] ring-1 ring-black/10 shadow-sm p-5 sm:p-6">
+            <div className="rounded-3xl bg-white/5 ring-1 ring-white/12 backdrop-blur shadow-2xl p-5 sm:p-6">
               <div className="flex items-center justify-between">
-                <div className="text-sm font-semibold text-black/70">Industries</div>
+                <div className="text-sm font-semibold text-white/70">Industries</div>
                 <span
                   className="h-2 w-2 rounded-full"
                   style={{ backgroundColor: accent }}
@@ -132,21 +135,20 @@ export default function MKGWhoWeWorkWith({
                       className={[
                         "w-full text-left rounded-2xl px-4 py-3 ring-1 transition",
                         isActive
-                          ? "bg-[#e9e0d9] ring-black/15 shadow-sm"
-                          : "bg-white/40 ring-black/10 hover:bg-white/60",
+                          ? "bg-white/10 ring-white/20 shadow-2xl"
+                          : "bg-white/5 ring-white/12 hover:bg-white/8",
                       ].join(" ")}
                     >
                       <div className="flex items-start justify-between gap-3">
                         <div>
-                          <div className="text-sm font-semibold text-black">{g.title}</div>
-                          <div className="mt-1 text-xs text-black/55">{g.tagline}</div>
+                          <div className="text-sm font-semibold text-white">{g.title}</div>
+                          <div className="mt-1 text-xs text-white/55">{g.tagline}</div>
                         </div>
 
-                        {/* tiny indicator */}
                         <span
                           className={[
                             "mt-1 h-2.5 w-2.5 rounded-full",
-                            isActive ? "opacity-100" : "opacity-30",
+                            isActive ? "opacity-100" : "opacity-35",
                           ].join(" ")}
                           style={{ backgroundColor: accent }}
                           aria-hidden
@@ -158,37 +160,36 @@ export default function MKGWhoWeWorkWith({
               </div>
 
               {/* Small note */}
-              <div className="mt-5 rounded-2xl bg-black/5 p-4 text-xs text-black/55">
-                We tailor the *industry details* — but the operating system is the same.
+              <div className="mt-5 rounded-2xl bg-black/40 ring-1 ring-white/10 p-4 text-xs text-white/55">
+                We tailor the <span className="text-white/70">industry details</span> — but
+                the operating system is the same.
               </div>
             </div>
           </div>
 
           {/* RIGHT: Featured panel + logo cloud */}
           <div className="lg:col-span-8">
-            <div className="relative overflow-hidden rounded-3xl bg-[#e9e0d9] ring-1 ring-black/10 shadow-sm">
+            <div className="relative overflow-hidden rounded-3xl bg-white/5 ring-1 ring-white/12 backdrop-blur shadow-2xl">
               {/* subtle texture */}
-              <div className="pointer-events-none absolute inset-0 opacity-[0.25]">
-                <div className="absolute -right-16 -top-16 h-72 w-72 rounded-full bg-black/5 blur-2xl" />
-                <div className="absolute -left-16 -bottom-16 h-72 w-72 rounded-full bg-black/5 blur-2xl" />
+              <div className="pointer-events-none absolute inset-0 opacity-[0.35]">
+                <div className="absolute -right-16 -top-16 h-72 w-72 rounded-full bg-white/5 blur-2xl" />
+                <div className="absolute -left-16 -bottom-16 h-72 w-72 rounded-full bg-white/5 blur-2xl" />
               </div>
 
               <div className="relative p-6 sm:p-8">
                 {/* Top bar */}
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div>
-                    <div className="text-xs tracking-[0.25em] text-black/50 uppercase">
+                    <div className="text-xs tracking-[0.25em] text-white/50 uppercase">
                       Selected Focus
                     </div>
-                    <h3 className="mt-2 text-2xl sm:text-3xl font-semibold text-black">
+                    <h3 className="mt-2 text-2xl sm:text-3xl font-semibold text-white">
                       {active.title}
                     </h3>
-                    <p className="mt-3 max-w-2xl text-sm sm:text-base text-black/60 leading-relaxed">
+                    <p className="mt-3 max-w-2xl text-sm sm:text-base text-white/60 leading-relaxed">
                       {active.desc}
                     </p>
                   </div>
-
-
                 </div>
 
                 {/* Bullets */}
@@ -197,7 +198,7 @@ export default function MKGWhoWeWorkWith({
                     {active.bullets.map((b) => (
                       <div
                         key={b}
-                        className="rounded-2xl bg-[#F4F7F2] p-4 ring-1 ring-black/10"
+                        className="rounded-2xl bg-white/5 p-4 ring-1 ring-white/12 hover:bg-white/8 transition"
                       >
                         <div className="flex items-start gap-3">
                           <span
@@ -205,7 +206,7 @@ export default function MKGWhoWeWorkWith({
                             style={{ backgroundColor: accent }}
                             aria-hidden
                           />
-                          <div className="text-sm font-semibold text-black/80">{b}</div>
+                          <div className="text-sm font-semibold text-white/80">{b}</div>
                         </div>
                       </div>
                     ))}
@@ -215,17 +216,17 @@ export default function MKGWhoWeWorkWith({
                 {/* Logo Cloud */}
                 <div className="mt-8">
                   <div className="flex items-center justify-between">
-                    <div className="text-xs tracking-[0.25em] text-black/50 uppercase">
+                    <div className="text-xs tracking-[0.25em] text-white/50 uppercase">
                       Past Clients / Categories
                     </div>
-                    <div className="text-xs text-black/45">(replace with real logos anytime)</div>
+                    <div className="text-xs text-white/40">(replace with real logos anytime)</div>
                   </div>
 
                   <div className="mt-4 flex flex-wrap gap-2">
                     {(active.logos ?? []).map((l) => (
                       <span
                         key={l}
-                        className="rounded-2xl bg-[#F4F7F2] px-4 py-2 text-xs font-semibold text-black/60 ring-1 ring-black/10 hover:bg-white/70 transition"
+                        className="rounded-2xl bg-white/5 px-4 py-2 text-xs font-semibold text-white/65 ring-1 ring-white/12 hover:bg-white/8 transition"
                       >
                         {l}
                       </span>
@@ -234,15 +235,15 @@ export default function MKGWhoWeWorkWith({
                 </div>
 
                 {/* Bottom strip */}
-                <div className="mt-8 rounded-2xl bg-black/5 p-5">
+                <div className="mt-8 rounded-2xl bg-black/40 ring-1 ring-white/10 p-5">
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                    <p className="text-sm text-black/60">
+                    <p className="text-sm text-white/60">
                       Want your industry added here with real case studies and proof?
                     </p>
                     <Link
                       to="contact"
                       onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
-                      className="rounded-full bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-black/90"
+                      className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black hover:bg-white/90"
                     >
                       Start a project
                     </Link>
@@ -251,10 +252,8 @@ export default function MKGWhoWeWorkWith({
               </div>
             </div>
 
-            {/* Tiny helper: spacing variety */}
-            <div className="mt-4 text-xs text-black/40">
-              {/* Tip: this section intentionally breaks the “card grid” pattern to keep the page from feeling repetitive. */}
-            </div>
+            {/* tiny helper */}
+            <div className="mt-4 text-xs text-white/35">{/* intentional spacing */}</div>
           </div>
         </div>
       </div>

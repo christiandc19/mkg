@@ -1,41 +1,49 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import Navbar from "../components/home/Navbar";
-import { motion, useScroll, useTransform } from "framer-motion";
 import Footer from "../components/home/Footer";
-import { Link } from "react-router-dom";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { useState } from "react";
 
 export default function SiteLayout() {
-  const { scrollYProgress } = useScroll();
+  const { scrollY } = useScroll();
+  const [scrolled, setScrolled] = useState(false);
 
-  // 0 = top of page, 1 = bottom of page
-  // Make it reach the new color around ~35% scroll (tweak as you like)
-  const bg = useTransform(
-    scrollYProgress,
-    [0, 0.35],
-    ["#F4F7F2", "#e9e0d9ff"]
-  );
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScrolled(latest > 40); // tweak
+  });
 
   return (
-    <motion.div className="min-h-screen text-black" style={{ backgroundColor: bg }}>
-      <div className="flex items-center justify-between px-10 py-6">
-        
-    <Link
-      to="/"
-      onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
-      className="font-bold tracking-tight hover:opacity-80 transition"
-      style={{ fontSize: "1.5rem", fontFamily: "Kinta, sans-serif" }}
-    >
-      MKG Digital Management
-    </Link>
+    <div className="min-h-screen">
+      <motion.header
+        className={`left-0 right-0 top-0 z-50 ${
+          scrolled ? "fixed" : "absolute"
+        }`}
+        animate={{
+          backgroundColor: scrolled ? "rgba(0,0,0,0.85)" : "rgba(0,0,0,0)",
+          backdropFilter: scrolled ? "blur(10px)" : "blur(0px)",
+          WebkitBackdropFilter: scrolled ? "blur(10px)" : "blur(0px)",
+        }}
+        transition={{ duration: 0.25, ease: "easeOut" }}
+      >
+        <div className="flex items-center justify-between px-10 py-6 text-white">
+          <Link
+            to="/"
+            onClick={() =>
+              window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+            }
+            className="font-bold tracking-tight hover:opacity-80 transition"
+            style={{ fontSize: "1.5rem", fontFamily: "Kinta, sans-serif" }}
+          >
+            MKG Digital Management
+          </Link>
 
+          <Navbar />
+        </div>
+      </motion.header>
 
-        <Navbar />
-      </div>
-
+      {/* ✅ No top padding here, so the hero can sit behind the transparent header */}
       <Outlet />
       <Footer />
-
-    </motion.div>
+    </div>
   );
 }
-

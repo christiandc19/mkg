@@ -4,14 +4,13 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import CaseStudiesCarousel from "../components/home/CaseStudiesCarousel";
 import { CASE_STUDIES } from "../components/home/CaseStudiesData";
-import SystemPromo from "../components/home/SystemPromo";
 import DigitalAgencyHero from "../components/home/DigitalAgencyHero";
 import Person from "../assets/images/person.webp";   // <-- change filename to yours
 import Flow from "../assets/images/flow.png";       // optional
 import AuthorityStrip from "../components/home/AuthorityStrip";
 import MKGOperatingSystem from "../components/home/MKGOperatingSystem";
 import MKGWhoWeWorkWith from "../components/home/MKGWhoWeWorkWith";
-
+import BG from '../assets/images/mkg-hero-bg.webp'
 import VideoSection from "../components/home/VideoSection";
 import TestimonialCarousel from "../components/home/TestimonialCarousel";
 import Typewriter from "../components/home/Typewriter";
@@ -101,7 +100,18 @@ export default function Home() {
     <>
 
 {/* HERO */}
-<section className="relative px-5 sm:px-8 md:px-10 pb-10 overflow-hidden">
+<section
+  className="relative min-h-screen px-5 sm:px-8 md:px-10 pb-10 overflow-hidden text-white flex items-center"
+  style={{
+    backgroundImage: `url(${BG})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
+  {/* Optional dark overlay for readability */}
+  <div className="absolute inset-0 bg-black/70" />
+
   {/* Watermark */}
   <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
     <div
@@ -111,8 +121,9 @@ export default function Home() {
         fontWeight: 400,
         fontSize: "clamp(10rem, 24vw, 30rem)",
         lineHeight: 1,
-        opacity: 0.04,          // lighter than footer
+        opacity: 0.05,
         letterSpacing: "-0.04em",
+        color: "white",
       }}
     >
       MKG
@@ -122,7 +133,7 @@ export default function Home() {
   {/* Content */}
   <div className="relative z-10 mx-auto max-w-6xl">
     <div className="mt-16 flex flex-col items-center text-center">
-      <p className="text-sm uppercase tracking-widest text-black/60">
+      <p className="text-sm uppercase tracking-widest text-white/70">
         We Build Brands, Media Systems, and Digital Ecosystems That Scale.
       </p>
 
@@ -144,29 +155,31 @@ export default function Home() {
         </h1>
       </motion.div>
 
-      <p className="mt-6 max-w-xl text-black/70">
+      <p className="mt-6 max-w-xl text-white/70">
         A full-service brand, media, and growth agency helping founders,
         companies, and creators turn attention into authority — and
         authority into revenue.
       </p>
 
       <div className="mt-8 flex flex-wrap gap-3 justify-center">
-
-    <Link
-      to="contact"
-      onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
-      className="rounded-full bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-black/90"
-    >
-      Book a Call
+        <Link
+          to="contact"
+          onClick={() =>
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+          }
+          className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black hover:bg-white/90"
+        >
+          Book a Call
         </Link>
 
-
-    <Link
-      to="case-studies"
-      onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
-      className="rounded-full border border-black/20 px-6 py-3 text-sm font-semibold hover:bg-black/5"
-    >
-      View Case Studies
+        <Link
+          to="case-studies"
+          onClick={() =>
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+          }
+          className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
+        >
+          View Case Studies
         </Link>
       </div>
     </div>
@@ -190,7 +203,7 @@ export default function Home() {
       {/* ------------------------------------------------------- MARQUEE ------------------------------------- */}
 
 {/* LOGO MARQUEE */}
-<section className="pb-24 pt-24 bg-[#e9e0d9]">
+<section className="pb-24 pt-24 bg-[white]">
   <div className="w-[90%] mx-auto">
     {/* Top line */}
     <div className="border-t border-black/10 pt-10" />
@@ -241,7 +254,6 @@ export default function Home() {
 
 
 {/* ------------------------------------------------- CASE STUDIES ---------------------------------------------------------------------- */}
-
       <CaseStudiesCarousel
         items={CASE_STUDIES}
         title=""

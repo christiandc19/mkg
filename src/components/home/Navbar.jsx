@@ -7,7 +7,6 @@ const drawerVariants = {
   open: { x: 0, transition: { duration: 0.45, ease: "easeOut" } },
 };
 
-// Items appear one-by-one with 0.5s interval
 const listVariants = {
   closed: {},
   open: {
@@ -25,17 +24,15 @@ const itemVariants = {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [menuRun, setMenuRun] = useState(0); // ✅ forces stagger to re-run each open
+  const [menuRun, setMenuRun] = useState(0);
   const navigate = useNavigate();
 
-  // ESC to close
   useEffect(() => {
     const onKeyDown = (e) => e.key === "Escape" && setOpen(false);
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
-  // lock scroll when open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -45,7 +42,6 @@ export default function Navbar() {
 
   function goTo(target) {
     setOpen(false);
-
     setTimeout(() => {
       if (target.startsWith("#")) {
         const el = document.querySelector(target);
@@ -58,20 +54,20 @@ export default function Navbar() {
 
   return (
     <div className="relative flex items-center justify-end">
-      {/* Hamburger Trigger (black, no border, no brand) */}
+      {/* Hamburger */}
       <button
         type="button"
         onClick={() => {
           setMenuRun((n) => n + 1);
           setOpen(true);
         }}
-        className="relative z-50 inline-flex h-11 w-11 items-center justify-center bg-transparent hover:bg-black/5"
+        className="relative z-50 inline-flex h-11 w-11 items-center justify-center bg-transparent hover:bg-white/10"
         aria-label="Open menu"
       >
         <div className="relative h-4 w-5">
-          <span className="absolute left-0 top-0 h-0.5 w-5 rounded bg-black" />
-          <span className="absolute left-0 top-[7px] h-0.5 w-5 rounded bg-black" />
-          <span className="absolute left-0 bottom-0 h-0.5 w-5 rounded bg-black" />
+          <span className="absolute left-0 top-0 h-0.5 w-5 rounded bg-white" />
+          <span className="absolute left-0 top-[7px] h-0.5 w-5 rounded bg-white" />
+          <span className="absolute left-0 bottom-0 h-0.5 w-5 rounded bg-white" />
         </div>
       </button>
 
@@ -83,7 +79,7 @@ export default function Navbar() {
               type="button"
               aria-label="Close menu"
               onClick={() => setOpen(false)}
-              className="fixed inset-0 z-40 cursor-default bg-black/50"
+              className="fixed inset-0 z-40 cursor-default bg-black/70"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { duration: 0.2 } }}
@@ -95,30 +91,28 @@ export default function Navbar() {
               initial="closed"
               animate="open"
               exit="closed"
-              className="fixed right-0 top-0 z-50 h-screen w-[92vw] sm:w-[70vw] md:w-1/3"
+              className="fixed right-0 top-0 z-50 h-screen w-[92vw] sm:w-[70vw] md:w-1/3 bg-black text-white"
               style={{
-                backgroundColor: "#e9e0d9",
                 fontFamily: "zuume, sans-serif",
                 fontWeight: 400,
-                color: "#000",
               }}
             >
-              {/* Top row (X button) */}
+              {/* Close button */}
               <div className="flex justify-end p-6">
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
                   aria-label="Close menu"
-                  className="rounded-md p-2 hover:bg-black/5"
+                  className="rounded-md p-2 hover:bg-white/10"
                 >
                   <div className="relative h-6 w-6">
-                    <span className="absolute left-1/2 top-1/2 h-[2px] w-6 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-black" />
-                    <span className="absolute left-1/2 top-1/2 h-[2px] w-6 -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-black" />
+                    <span className="absolute left-1/2 top-1/2 h-[2px] w-6 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white" />
+                    <span className="absolute left-1/2 top-1/2 h-[2px] w-6 -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-white" />
                   </div>
                 </button>
               </div>
 
-              {/* Menu content (stagger re-runs every open via key={menuRun}) */}
+              {/* Menu */}
               <motion.div
                 key={menuRun}
                 variants={listVariants}
@@ -126,7 +120,6 @@ export default function Navbar() {
                 animate="open"
                 className="px-10 pb-10"
               >
-                {/* Top menu items */}
                 <nav className="space-y-2">
                   <MenuLink variants={itemVariants} label="Home" onClick={() => goTo("/")} />
                   <MenuLink variants={itemVariants} label="About" onClick={() => goTo("/about")} />
@@ -138,17 +131,15 @@ export default function Navbar() {
                 {/* Divider */}
                 <motion.div
                   variants={itemVariants}
-                  className="my-10 h-px w-full bg-black/20"
+                  className="my-10 h-px w-full bg-white/20"
                 />
 
-                {/* Secondary menu items */}
                 <nav className="space-y-2">
                   <MenuLink
                     variants={itemVariants}
                     label="News & Stories"
                     onClick={() => goTo("#news")}
                   />
-
                 </nav>
               </motion.div>
             </motion.aside>
@@ -165,7 +156,7 @@ function MenuLink({ label, onClick, variants }) {
       type="button"
       variants={variants}
       onClick={onClick}
-      className="group flex w-full items-center justify-between text-left uppercase leading-none"
+      className="group flex w-full items-center justify-between text-left uppercase leading-none text-white"
       style={{
         fontSize: "44px",
         letterSpacing: "-0.02em",
@@ -173,7 +164,7 @@ function MenuLink({ label, onClick, variants }) {
     >
       <span className="relative">
         {label}
-        <span className="absolute -bottom-2 left-0 h-[6px] w-0 bg-black transition-all duration-200 group-hover:w-full" />
+        <span className="absolute -bottom-2 left-0 h-[6px] w-0 bg-white transition-all duration-200 group-hover:w-full" />
       </span>
     </motion.button>
   );
