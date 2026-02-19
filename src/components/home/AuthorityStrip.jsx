@@ -5,7 +5,7 @@ export default function AuthorityStrip() {
     <section className="w-full px-4 sm:px-8 pt-20 pb-20 bg-[white]">
       <div className="mx-auto w-[95%] lg:w-[90%]">
         {/* Same container style as Client Logos */}
-        <div className="rounded-3xl bg-[#e9e0d9] p-6 sm:p-8 ring-1 ring-black/5">
+        <div className="rounded-3xl bg-[black] p-6 sm:p-8 ring-1 ring-black/5">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 text-center">
             <Stat value="10+" label="Years Experience" />
             <Stat value="120+" label="Brands Built" />
@@ -21,7 +21,7 @@ export default function AuthorityStrip() {
 
 function Stat({ value, label }) {
   return (
-    <div className="rounded-2xl bg-[#F4F7F2] p-4 ring-1 ring-black/10 shadow-sm">
+    <div className="rounded-2xl bg-[#F4F7F2] p-4 ring-1 ring-black/10 shadow-sm ">
       <div
         className="text-3xl font-semibold text-black"
         style={{ fontFamily: "Kinta, sans-serif" }}
