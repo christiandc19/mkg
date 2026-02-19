@@ -88,20 +88,14 @@ function MarqueeItem({ item }) {
 
 // ---------- Page ----------
 export default function Home() {
-  // Intro overlay: zoom out -> zoom in -> reveal page
-  const [introDone, setIntroDone] = useState(false);
 
-  useEffect(() => {
-    const t = setTimeout(() => setIntroDone(true), 2400);
-    return () => clearTimeout(t);
-  }, []);
 
   return (
     <>
 
 {/* HERO */}
 <section
-  className="relative min-h-screen px-5 sm:px-8 md:px-10 pb-10 overflow-hidden text-white flex items-center"
+  className="relative min-h-[90vh] px-5 sm:px-8 md:px-10 pb-10 overflow-hidden text-white flex items-center"
   style={{
     backgroundImage: `url(${BG})`,
     backgroundSize: "cover",
@@ -203,10 +197,21 @@ export default function Home() {
       {/* ------------------------------------------------------- MARQUEE ------------------------------------- */}
 
 {/* LOGO MARQUEE */}
-<section className="pb-24 pt-24 bg-[white]">
+<section className="pb-24 pt-24 bg-white">
   <div className="w-[90%] mx-auto">
+
     {/* Top line */}
     <div className="border-t border-black/10 pt-10" />
+
+    {/* Header */}
+    <div className="text-center">
+      <h2
+        className="text-2xl sm:text-3xl tracking-tight text-black"
+        style={{ fontFamily: "Kinta, sans-serif" }}
+      >
+        BRANDS WE WORKED WITH
+      </h2>
+    </div>
 
     {/* Marquee */}
     <div className="mt-8 overflow-hidden">
@@ -266,9 +271,8 @@ export default function Home() {
 
 
 
+
       <AuthorityStrip />
-      <MKGOperatingSystem />
-      <MKGWhoWeWorkWith />
 
 
 
@@ -277,9 +281,9 @@ export default function Home() {
       {/* ------------------------------------------------------- MARQUEE ------------------------------------- */}
 
       {/* LOGO MARQUEE */}
-      <section className="px-0 pb-24 bg-[#e9e0d9]">
+      <section className="px-0 pb-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 md:px-10">
-          <div className="border-t border-black/10 pt-10" />
+          <div className="border-t border-white/10 pt-10" />
         </div>
 
         <div className="mx-auto max-w-6xl px-5 sm:px-8 md:px-10 mt-8">
@@ -312,13 +316,69 @@ export default function Home() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+      <MKGOperatingSystem />
+      <MKGWhoWeWorkWith />
+
+
+
+
+
+      {/* ------------------------------------------------------- MARQUEE ------------------------------------- */}
+
+      {/* LOGO MARQUEE */}
+      {/* <section className="px-0 pb-24">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 md:px-10">
+          <div className="border-t border-white/10 pt-10" />
+        </div>
+
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 md:px-10 mt-8">
+          <MarqueeRow
+            direction="left"
+            duration={28}
+            items={[
+              { type: "logo", src: logo1, alt: "Google" },
+              { type: "logo", src: logo2, alt: "Meta" },
+              { type: "logo", src: logo3, alt: "Shopify" },
+              { type: "logo", src: logo4, alt: "HubSpot" },
+              { type: "logo", src: logo5, alt: "WordPress" },
+              { type: "logo", src: logo6, alt: "GA4" },
+              { type: "logo", src: logo7, alt: "Magento" },
+              { type: "logo", src: logo8, alt: "Semrush" },
+              { type: "logo", src: logo9, alt: "Wix" },
+              { type: "logo", src: logo10, alt: "React" },
+              { type: "logo", src: logo11, alt: "Tiktok" },
+              { type: "logo", src: logo12, alt: "Instagram" },
+              { type: "logo", src: logo13, alt: "Facebook" },
+              { type: "logo", src: logo14, alt: "Google Ads" },
+            ]}
+          />
+        </div>
+
+        <div className="mx-auto max-w-6xl px-10">
+          <div/>
+        </div>
+      </section> */}
+
+
+
       <TestimonialCarousel />
 
 
 {/* ------------------------------------------------------------------------------------------------- */}
 
  {/* FINAL HOME CTA */}
-        <div className="flex flex-col items-center gap-6 pb-20 pt-20 bg-[#e9e0d9]">
+        <div className="flex flex-col items-center gap-6 pb-20 pt-20 bg-[white]">
           <h2
             className="text-3xl sm:text-4xl font-semibold text-black"
             style={{ fontFamily: "Kinta, sans-serif" }}

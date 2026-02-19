@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function DigitalAgencyHero({ personSrc, citySrc }) {
   return (
-    <section className="relative w-full px-4 sm:px-8 py-16 md:py-24 bg-[#0b0b0b] overflow-hidden">
+    <section className="relative w-full px-4 sm:px-8 py-16 md:py-24 bg-[white] overflow-hidden">
       {/* ✅ Subtle “silver” top border (brand: black + gray) */}
       <div
         className="pointer-events-none absolute left-0 right-0 top-0 z-50"

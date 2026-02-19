@@ -28,12 +28,12 @@ export default function TestimonialCarousel() {
   useEffect(() => {
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % testimonials.length);
-    }, 5000); // ⬅ slower (5 seconds)
+    }, 5000);
     return () => clearInterval(id);
   }, []);
 
   return (
-    <section className="px-6 py-24 bg-[white]">
+    <section className="px-6 py-24 bg-black">
       <div className="mx-auto max-w-3xl text-center">
         <AnimatePresence mode="wait">
           <motion.div
@@ -45,7 +45,7 @@ export default function TestimonialCarousel() {
             className="space-y-6"
           >
             {/* Stars */}
-            <div className="flex justify-center gap-1 text-[#ffc107]">
+            <div className="flex justify-center gap-1">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} />
               ))}
@@ -53,10 +53,11 @@ export default function TestimonialCarousel() {
 
             {/* Quote */}
             <p
-              className="leading-relaxed text-black/80"
+              className="leading-relaxed text-white/85"
               style={{
                 fontSize: "clamp(1.15rem, 2.2vw, 1.5rem)",
-                fontFamily: "'Roboto', system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
+                fontFamily:
+                  "'Roboto', system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
                 fontWeight: 400,
               }}
             >
@@ -65,7 +66,7 @@ export default function TestimonialCarousel() {
 
             {/* Author */}
             <div
-              className="text-xs uppercase tracking-widest text-black/50"
+              className="text-xs uppercase tracking-widest text-white/55"
               style={{
                 fontFamily: "'Roboto', system-ui, sans-serif",
                 fontWeight: 500,
