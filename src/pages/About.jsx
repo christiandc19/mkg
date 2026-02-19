@@ -2,36 +2,81 @@ import MKGStory from '../components/about/MKGStorySection'
 import MKGMission from '../components/about/MKGMissionSection'
 import MKGDifferent from '../components/about/MKGDifferentSection'
 import MKGThink from '../components/about/MKGHowWeThink'
+import BG from "../assets/images/mkg-hero-bg.webp";
+import { motion } from "framer-motion";
+import Typewriter from "../components/home/Typewriter";
 
 export default function About() {
   return (
     <>
-      {/* 50vh hero headline */}
-<section className="h-[50vh] px-10 flex items-center">
-  <div className="w-full max-w-6xl mx-auto">
-    <h1
-      className="leading-none tracking-tight text-center"
-      style={{
-        fontSize: "clamp(1rem, 14vw, 7rem)",
-        fontFamily: "Kinta, sans-serif",
-        fontWeight: 400,
-      }}
-    >
-      ABOUT
-    </h1>
 
-    <p
-      className="mt-4 text-center"
-      style={{
-        fontSize: "clamp(2rem, 2vw, 7rem)",
-        fontFamily: "Kinta, sans-serif",
-        fontWeight: 400,
-      }}
-    >
-      Building the infrastructure behind modern brands.
-    </p>
-  </div>
-</section>
+
+      {/* HERO */}
+      <section
+        className="relative min-h-[75vh] sm:min-h-[75vh] lg:min-h-[80vh] px-5 sm:px-8 md:px-10 pb-12 overflow-hidden text-white flex items-center"
+        style={{
+          backgroundImage: `url(${BG})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        {/* Optional dark overlay for readability */}
+        <div className="absolute inset-0 bg-black/70" />
+
+        {/* Watermark */}
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+          <div
+            className="select-none"
+            style={{
+              fontFamily: "Kinta, sans-serif",
+              fontWeight: 400,
+              fontSize: "clamp(7rem, 24vw, 30rem)", // smaller on mobile
+              lineHeight: 1,
+              opacity: 0.05,
+              letterSpacing: "-0.04em",
+              color: "white",
+            }}
+          >
+            MKG
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 mx-auto w-full max-w-6xl">
+          <div className="mt-10 sm:mt-16 flex flex-col items-center text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="w-full"
+            >
+              <h1
+                className="leading-none tracking-tight"
+                style={{
+                  fontSize: "clamp(2.75rem, 10vw, 6rem)", // mobile-friendly
+                  fontFamily: "Kinta, sans-serif",
+                  fontWeight: 400,
+                }}
+              >
+                <Typewriter text="ABOUT US" speed={90} />
+              </h1>
+            </motion.div>
+
+            {/* New blurb */}
+            <p className="mt-5 sm:mt-6 max-w-xl text-white/70 text-sm sm:text-base leading-relaxed px-2">
+              Building the infrastructure behind modern brands.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+
 
 {/* -------------------------------------- */}
 

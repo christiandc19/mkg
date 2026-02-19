@@ -1,5 +1,7 @@
 // src/pages/CaseStudies.jsx
-import React from "react";
+import { motion } from "framer-motion";
+import Typewriter from "../components/home/Typewriter";
+import BG from "../assets/images/mkg-hero-bg.webp";
 import { Link } from "react-router-dom";
 
 const CASE_STUDIES = [
@@ -153,64 +155,110 @@ function CaseStudyCard({ item }) {
 
 export default function CaseStudies() {
   return (
-    <main className="w-full">
+
+    
+    <main className="w-full ">
+
+
       {/* HERO */}
-      <section className="w-full">
-        <div className="mx-auto w-[90%] max-w-6xl py-20 sm:py-24">
-          <div className="max-w-2xl">
-            <p className="text-sm tracking-wide text-black/60">
-              Media King Group — Case Studies
-            </p>
+      <section
+        className="relative min-h-[75vh] sm:min-h-[75vh] lg:min-h-[80vh] px-5 sm:px-8 md:px-10 pb-12 overflow-hidden text-white flex items-center"
+        style={{
+          backgroundImage: `url(${BG})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        {/* Optional dark overlay for readability */}
+        <div className="absolute inset-0 bg-black/70" />
 
-            <h1 className="mt-4 text-4xl sm:text-5xl font-semibold tracking-tight">
-              Systems that turn visibility into trust.
-            </h1>
+        {/* Watermark */}
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+          <div
+            className="select-none"
+            style={{
+              fontFamily: "Kinta, sans-serif",
+              fontWeight: 400,
+              fontSize: "clamp(7rem, 24vw, 30rem)", // smaller on mobile
+              lineHeight: 1,
+              opacity: 0.05,
+              letterSpacing: "-0.04em",
+              color: "white",
+            }}
+          >
+            MKG
+          </div>
+        </div>
 
-            <p className="mt-6 text-lg text-black/65 leading-relaxed">
-              A curated set of wins across brand, websites, content engines, and
-              lead capture. Each case study breaks down the problem, the system
-              we built, and what changed after.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center rounded-full border border-black/15 bg-white px-6 py-3 text-sm font-medium text-black/70 hover:text-black"
+        {/* Content */}
+        <div className="relative z-10 mx-auto w-full max-w-6xl">
+          <div className="mt-10 sm:mt-16 flex flex-col items-center text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="w-full"
+            >
+              <h1
+                className="leading-none tracking-tight"
+                style={{
+                  fontSize: "clamp(2.75rem, 10vw, 6rem)", // mobile-friendly
+                  fontFamily: "Kinta, sans-serif",
+                  fontWeight: 400,
+                }}
               >
-                Work with MKG
-              </Link>
-            </div>
+                <Typewriter text="CASE STUDIES" speed={90} />
+              </h1>
+            </motion.div>
+
+            {/* New blurb */}
+            <p className="mt-5 sm:mt-6 max-w-xl text-white/70 text-sm sm:text-base leading-relaxed px-2">
+              A curated set of wins across brand, websites, content engines, and lead capture. Each case study breaks down the problem, the system we built, and what changed after.
+            </p>
           </div>
         </div>
       </section>
 
       {/* DIVIDER */}
-      <section className="w-full bg-[#e9e0d9]">
+      <section className="w-full bg-[white]">
         <div className="mx-auto w-[90%] max-w-6xl py-10">
           <div className="border-t border-black/10" />
         </div>
       </section>
 
       {/* GRID */}
-      <section id="case-studies" className="w-full bg-[#e9e0d9]">
+      <section id="case-studies" className="w-full bg-[white]">
         <div className="mx-auto w-[90%] max-w-6xl pb-24">
           <div className="mb-8">
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
               All Case Studies
             </h2>
-            <p className="mt-2 text-black/60">
-              Click any card — you’ll wire each one to its own component later.
-            </p>
+
           </div>
 
-          <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 ">
             {CASE_STUDIES.map((item) => (
               <CaseStudyCard key={item.slug} item={item} />
             ))}
           </div>
         </div>
       </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
     </main>
   );
 }

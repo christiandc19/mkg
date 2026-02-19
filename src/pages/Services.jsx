@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import BG from "../assets/images/mkg-hero-bg.webp";
 import { motion } from "framer-motion";
+import Typewriter from "../components/home/Typewriter";
 
 import ServicesSection from '../components/services/ServicesSection.jsx'
 import ContactForm from '../components/home/ContactForm.jsx'
@@ -81,37 +82,69 @@ export default function Services() {
   return (
 
     <>
-    <section>
-        <div className="px-5 sm:px-8 md:px-10 py-16 md:py-20 mx-auto max-w-6xl">
-        <motion.div
-          initial="hidden"
-          animate="show"
-          variants={fadeUp}
-          className="max-w-3xl"
-        >
-          <p className="text-sm uppercase tracking-widest text-black/60">
-            Services
-          </p>
+    
+      {/* HERO */}
+      <section
+        className="relative min-h-[75vh] sm:min-h-[75vh] lg:min-h-[80vh] px-5 sm:px-8 md:px-10 pb-12 overflow-hidden text-white flex items-center"
+        style={{
+          backgroundImage: `url(${BG})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        {/* Optional dark overlay for readability */}
+        <div className="absolute inset-0 bg-black/70" />
 
-          <h1
-            className="mt-4 leading-none tracking-tight"
+        {/* Watermark */}
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+          <div
+            className="select-none"
             style={{
-              fontSize: "clamp(2.6rem, 6vw, 4.5rem)",
               fontFamily: "Kinta, sans-serif",
               fontWeight: 400,
+              fontSize: "clamp(7rem, 24vw, 30rem)", // smaller on mobile
+              lineHeight: 1,
+              opacity: 0.05,
+              letterSpacing: "-0.04em",
+              color: "white",
             }}
           >
-            Full-Service Brand, Media, and Growth Solutions.
-          </h1>
+            MKG
+          </div>
+        </div>
 
-          <p className="mt-6 text-black/70">
-            Everything your brand needs to scale — designed and executed as one system.
+        {/* Content */}
+        <div className="relative z-10 mx-auto w-full max-w-6xl">
+          <div className="mt-10 sm:mt-16 flex flex-col items-center text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="w-full"
+            >
+              <h1
+                className="leading-none tracking-tight"
+                style={{
+                  fontSize: "clamp(2.75rem, 10vw, 6rem)", // mobile-friendly
+                  fontFamily: "Kinta, sans-serif",
+                  fontWeight: 400,
+                }}
+              >
+                <Typewriter text="SERVICES" speed={90} />
+              </h1>
+            </motion.div>
 
-          </p>
-        </motion.div>
+            {/* New blurb */}
+            <p className="mt-5 sm:mt-6 max-w-xl text-white/70 text-sm sm:text-base leading-relaxed px-2">
+              Full-Service Brand, Media, and Growth Solutions.
+            </p>
+          </div>
+        </div>
+      </section>
 
-</div>
 
+    <section>
 
 {/* ---------------------------------------------------------------------------------- */}
 
