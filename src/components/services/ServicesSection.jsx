@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 // ✅ Update these paths to match your actual files
 import productionImg from "../../assets/images/production.webp";
 import brandingImg from "../../assets/images/branding.webp";
+import webDevImg from "../../assets/images/web-development.webp";
+import seoImg from "../../assets/images/SEO.webp";
+import commercialImg from "../../assets/images/commercial.webp";
+import automationImg from "../../assets/images/automation.webp";
+import managementImg from "../../assets/images/management.webp";
 
 const scrollTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -40,7 +45,7 @@ const services = [
   {
     title: "Web Design & Development",
     to: "/web-design-development",
-    img: brandingImg,
+    img: webDevImg,
     alt: "Web design and development",
     desc: "High-performing, modern websites that feel elegant and convert—built to scale with your business.",
     bullets: [
@@ -53,7 +58,7 @@ const services = [
   {
     title: "SEO & Performance Growth",
     to: "/seo-performance-growth",
-    img: productionImg,
+    img: seoImg,
     alt: "SEO and performance growth",
     desc: "Strong foundations and measurable growth systems that compound over time—without the noise.",
     bullets: [
@@ -66,7 +71,7 @@ const services = [
   {
     title: "Commercials & Paid Media",
     to: "/commercials-paid-media",
-    img: productionImg,
+    img: commercialImg,
     alt: "Commercials and paid media",
     desc: "Cinematic commercials and paid campaigns designed to stop the scroll and drive action.",
     bullets: [
@@ -79,7 +84,7 @@ const services = [
   {
     title: "Lead Generation & Automation",
     to: "/lead-generation-automation",
-    img: brandingImg,
+    img: automationImg,
     alt: "Lead generation and automation",
     desc: "Systems that capture, qualify, and follow up with leads automatically—so growth doesn’t depend on guesswork.",
     bullets: [
@@ -92,7 +97,7 @@ const services = [
   {
     title: "Ongoing Digital Managment",
     to: "/ongoing-digital-management",
-    img: brandingImg,
+    img: managementImg,
     alt: "Ongoing digital management",
     desc: "We don’t just launch—we manage, refine, and evolve your digital presence with you.",
     bullets: [

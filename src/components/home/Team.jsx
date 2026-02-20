@@ -55,6 +55,7 @@ export default function Team() {
             opacity: 0.8,
             letterSpacing: "-0.04em",
             color: "white",
+            textAlign: "center"
           }}
         >
           OUR TEAM
