@@ -1,3 +1,4 @@
+// src/components/services/ServicesSection.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -6,9 +7,102 @@ import productionImg from "../../assets/images/production.webp";
 import brandingImg from "../../assets/images/branding.webp";
 
 const scrollTop = () => {
-  // ✅ "instant" is not standard everywhere; "auto" is safest.
   window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 };
+
+const services = [
+  {
+    title: "Brand Strategy & Positioning",
+    to: "/brand-strategy-positioning",
+    img: brandingImg,
+    alt: "Brand strategy and positioning",
+    desc: "Define your brand purpose, voice, and positioning so your message is clear, consistent, and compelling.",
+    bullets: [
+      "Brand purpose & narrative",
+      "Audience + messaging framework",
+      "Positioning & differentiation",
+      "Identity direction (visual + verbal)",
+    ],
+  },
+  {
+    title: "Content & Storytelling",
+    to: "/content-storytelling",
+    img: productionImg,
+    alt: "Content and storytelling",
+    desc: "Editorial content that builds trust, shapes perception, and turns attention into action.",
+    bullets: [
+      "Brand voice & editorial direction",
+      "Social content systems",
+      "Launch + campaign storytelling",
+      "Creative direction (optional)",
+    ],
+  },
+  {
+    title: "Web Design & Development",
+    to: "/web-design-development",
+    img: brandingImg,
+    alt: "Web design and development",
+    desc: "High-performing, modern websites that feel elegant and convert—built to scale with your business.",
+    bullets: [
+      "UX/UI + responsive design",
+      "React / WordPress builds (as needed)",
+      "Performance + accessibility",
+      "Conversion-focused structure",
+    ],
+  },
+  {
+    title: "SEO & Performance Growth",
+    to: "/seo-performance-growth",
+    img: productionImg,
+    alt: "SEO and performance growth",
+    desc: "Strong foundations and measurable growth systems that compound over time—without the noise.",
+    bullets: [
+      "SEO foundations + content planning",
+      "CRO (conversion optimization)",
+      "Analytics + reporting setup",
+      "Funnel & journey improvements",
+    ],
+  },
+  {
+    title: "Commercials & Paid Media",
+    to: "/commercials-paid-media",
+    img: productionImg,
+    alt: "Commercials and paid media",
+    desc: "Cinematic commercials and paid campaigns designed to stop the scroll and drive action.",
+    bullets: [
+      "Commercial & brand video",
+      "Paid social + search creative",
+      "Campaign strategy + testing",
+      "Landing pages + conversion support",
+    ],
+  },
+  {
+    title: "Lead Generation & Automation",
+    to: "/lead-generation-automation",
+    img: brandingImg,
+    alt: "Lead generation and automation",
+    desc: "Systems that capture, qualify, and follow up with leads automatically—so growth doesn’t depend on guesswork.",
+    bullets: [
+      "CRM + form integrations",
+      "Email/SMS follow-up flows",
+      "Lead routing + segmentation",
+      "Dashboards + workflow automation",
+    ],
+  },
+  {
+    title: "Ongoing Digital Managment",
+    to: "/ongoing-digital-management",
+    img: brandingImg,
+    alt: "Ongoing digital management",
+    desc: "We don’t just launch—we manage, refine, and evolve your digital presence with you.",
+    bullets: [
+      "Website updates + improvements",
+      "Performance monitoring",
+      "Monthly strategy iteration",
+      "Content & campaign support",
+    ],
+  },
+];
 
 export default function ServicesSection() {
   return (
@@ -23,114 +117,50 @@ export default function ServicesSection() {
           </h2>
 
           <p className="mt-6 text-lg text-black/65 leading-relaxed">
-            We design systems that make brands clearer, stronger, and easier to
-            trust — not one-off deliverables.
+            Growing  brands with purpose by capturing attention today and creating momentum for tomorrow.
           </p>
         </div>
 
         {/* Cards */}
         <div className="mt-14 grid gap-6 md:grid-cols-2">
-          {/* Brand Identity */}
-          <article className="overflow-hidden rounded-3xl border border-black/10 bg-white transition hover:-translate-y-0.5 hover:shadow-md">
-            {/* ✅ Image is a Link + scroll-to-top */}
-            <Link
-              to="/brand-identity"
-              onClick={scrollTop}
-              className="group relative block h-56 sm:h-64"
-              aria-label="View Brand Identity service"
+          {services.map((service) => (
+            <article
+              key={service.title}
+              className="overflow-hidden rounded-3xl border border-black/10 bg-white transition hover:-translate-y-0.5 hover:shadow-md"
             >
-              <img
-                src={brandingImg}
-                alt="Brand identity — strategy and visual system"
-                className="absolute inset-0 h-full w-full object-cover transition group-hover:scale-[1.02]"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-black/10" />
-            </Link>
+              {/* Image Link (kept clickable) */}
+              <Link
+                to={service.to}
+                onClick={scrollTop}
+                className="group relative block h-56 sm:h-64"
+                aria-label={`View ${service.title} service`}
+              >
+                <img
+                  src={service.img}
+                  alt={service.alt}
+                  className="absolute inset-0 h-full w-full object-cover transition group-hover:scale-[1.02]"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/10" />
+              </Link>
 
-            <div className="p-8">
-              <h3 className="text-2xl font-semibold tracking-tight">
-                Brand Identity
-              </h3>
+              <div className="p-8">
+                <h3 className="text-2xl font-semibold tracking-tight">
+                  {service.title}
+                </h3>
 
-              <p className="mt-4 text-black/65 leading-relaxed">
-                Define how your brand looks, sounds, and shows up across every
-                touchpoint — with clarity and consistency.
-              </p>
+                <p className="mt-4 text-black/65 leading-relaxed">
+                  {service.desc}
+                </p>
 
-              <ul className="mt-6 space-y-2 text-sm text-black/60">
-                <li>• Positioning &amp; messaging</li>
-                <li>• Visual identity systems</li>
-                <li>• Brand guidelines</li>
-              </ul>
-
-              {/* ✅ CTA Button as Link */}
-              <div className="mt-8">
-                <Link
-                  to="/brand-identity"
-                  onClick={scrollTop}
-                  className="
-                    inline-flex items-center justify-center gap-2
-                    rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white
-                    transition hover:opacity-90
-                  "
-                >
-                  View Brand Identity <span aria-hidden>→</span>
-                </Link>
+                <ul className="mt-6 space-y-2 text-sm text-black/60">
+                  {service.bullets.map((b) => (
+                    <li key={b}>• {b}</li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          </article>
-
-          {/* Media Content Production */}
-          <article className="overflow-hidden rounded-3xl border border-black/10 bg-white transition hover:-translate-y-0.5 hover:shadow-md">
-            {/* ✅ Image is a Link + scroll-to-top */}
-            <Link
-              to="/media-content-production"
-              onClick={scrollTop}
-              className="group relative block h-56 sm:h-64"
-              aria-label="View Media Content Production service"
-            >
-              <img
-                src={productionImg}
-                alt="Media content production — cinematic production"
-                className="absolute inset-0 h-full w-full object-cover transition group-hover:scale-[1.02]"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-black/10" />
-            </Link>
-
-            <div className="p-8">
-              <h3 className="text-2xl font-semibold tracking-tight">
-                Media Content Production
-              </h3>
-
-              <p className="mt-4 text-black/65 leading-relaxed">
-                Cinematic, intentional media designed to support your brand —
-                not just fill space.
-              </p>
-
-              <ul className="mt-6 space-y-2 text-sm text-black/60">
-                <li>• Commercial &amp; brand video</li>
-                <li>• Campaign &amp; social content</li>
-                <li>• Photography &amp; visual assets</li>
-              </ul>
-
-              {/* ✅ CTA Button as Link */}
-              <div className="mt-8">
-                <Link
-                  to="/media-content-production"
-                  onClick={scrollTop}
-                  className="
-                    inline-flex items-center justify-center gap-2
-                    rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white
-                    transition hover:opacity-90
-                  "
-                >
-                  View Media Production <span aria-hidden>→</span>
-                </Link>
-              </div>
-            </div>
-          </article>
+            </article>
+          ))}
         </div>
       </div>
     </section>
