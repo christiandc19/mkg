@@ -197,8 +197,8 @@ export default function CaseStudiesCarousel({
             aria-label="Previous"
             className="
               absolute left-0 top-1/2 z-30 -translate-x-1/2 -translate-y-1/2
-              h-11 w-11 sm:h-12 sm:w-12 rounded-full bg-white/10
-              ring-1 ring-white/15 hover:bg-white/15
+              h-11 w-11 sm:h-12 sm:w-12 rounded-full bg-black/10
+              ring-1 ring-black/15 hover:bg-black/15
               active:scale-95 transition flex items-center justify-center
               backdrop-blur
             "
@@ -220,8 +220,8 @@ export default function CaseStudiesCarousel({
             aria-label="Next"
             className="
               absolute right-0 top-1/2 z-30 translate-x-1/2 -translate-y-1/2
-              h-11 w-11 sm:h-12 sm:w-12 rounded-full bg-white/10
-              ring-1 ring-white/15 hover:bg-white/15
+              h-11 w-11 sm:h-12 sm:w-12 rounded-full bg-black/10
+              ring-1 ring-black/15 hover:bg-black/15
               active:scale-95 transition flex items-center justify-center
               backdrop-blur
             "
