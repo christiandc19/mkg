@@ -14,6 +14,7 @@ import BG from '../assets/images/mkg-hero-bg.webp'
 import VideoSection from "../components/home/VideoSection";
 import TestimonialCarousel from "../components/home/TestimonialCarousel";
 import Typewriter from "../components/home/Typewriter";
+import Team from "../components/home/Team";
 
 import logo1 from "../assets/images/google.png";
 import logo2 from "../assets/images/meta.png";
@@ -325,9 +326,10 @@ export default function Home() {
 
 
 
+      <Team />
 
 
-      <MKGOperatingSystem />
+      {/* <MKGOperatingSystem /> */}
       <MKGWhoWeWorkWith />
 
 

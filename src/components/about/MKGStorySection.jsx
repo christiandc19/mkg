@@ -16,7 +16,7 @@ export default function MKGStorySection() {
             className="lg:col-span-5"
           >
             <div className="inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-xs font-semibold tracking-widest text-black/60">
-              THE STORY
+              ABOUT US
               <span className="h-2 w-2 rounded-full bg-black/40" aria-hidden />
             </div>
 
@@ -50,14 +50,11 @@ export default function MKGStorySection() {
 
               <div className="relative space-y-5">
                 <p className="text-black/75 leading-relaxed">
-                  What began as deep expertise in viral media evolved into a full-service
-                  agency focused on brand identity, content systems, digital infrastructure,
-                  and long-term growth strategy.
+                  Founded in 2023, Media King Group is a privately owned, mission-led media agency built to help brands grow with clarity, creativity, and measurable impact. The company was established to challenge traditional marketing models by combining strategy, storytelling, and performance marketing under one roof.
                 </p>
 
                 <p className="text-black/75 leading-relaxed">
-                  Today, Media King Group partners with brands across industries to design
-                  ecosystems that compound.
+                  Media King works alongside founders, operators, and teams to deliver full-service media solutions—supporting brands across digital marketing, content creation, social growth, and brand positioning. The agency partners with both emerging and established businesses seeking scalable, modern marketing solutions.
                 </p>
 
                 {/* Bottom highlight line */}
