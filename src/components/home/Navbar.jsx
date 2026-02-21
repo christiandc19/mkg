@@ -40,14 +40,26 @@ export default function Navbar() {
     };
   }, [open]);
 
+  // 🔥 ALWAYS SCROLL TO TOP WHEN NAVIGATING
   function goTo(target) {
     setOpen(false);
+
     setTimeout(() => {
       if (target.startsWith("#")) {
         const el = document.querySelector(target);
-        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          // fallback
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
       } else {
         navigate(target);
+
+        // wait a tick so route renders first
+        requestAnimationFrame(() => {
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        });
       }
     }, 150);
   }
@@ -128,7 +140,6 @@ export default function Navbar() {
                   <MenuLink variants={itemVariants} label="Contact" onClick={() => goTo("/contact")} />
                 </nav>
 
-                {/* Divider */}
                 <motion.div
                   variants={itemVariants}
                   className="my-10 h-px w-full bg-white/20"

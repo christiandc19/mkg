@@ -1,8 +1,7 @@
 // src/components/services/ServicesSection.jsx
 import React from "react";
-import { Link } from "react-router-dom";
 
-// ✅ Update these paths to match your actual files
+// Images
 import productionImg from "../../assets/images/production.webp";
 import brandingImg from "../../assets/images/branding.webp";
 import webDevImg from "../../assets/images/web-development.webp";
@@ -11,14 +10,9 @@ import commercialImg from "../../assets/images/commercial.webp";
 import automationImg from "../../assets/images/automation.webp";
 import managementImg from "../../assets/images/management.webp";
 
-const scrollTop = () => {
-  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-};
-
 const services = [
   {
     title: "Brand Strategy & Positioning",
-    to: "/brand-strategy-positioning",
     img: brandingImg,
     alt: "Brand strategy and positioning",
     desc: "Define your brand purpose, voice, and positioning so your message is clear, consistent, and compelling.",
@@ -31,7 +25,6 @@ const services = [
   },
   {
     title: "Content & Storytelling",
-    to: "/content-storytelling",
     img: productionImg,
     alt: "Content and storytelling",
     desc: "Editorial content that builds trust, shapes perception, and turns attention into action.",
@@ -44,7 +37,6 @@ const services = [
   },
   {
     title: "Web Design & Development",
-    to: "/web-design-development",
     img: webDevImg,
     alt: "Web design and development",
     desc: "High-performing, modern websites that feel elegant and convert—built to scale with your business.",
@@ -57,7 +49,6 @@ const services = [
   },
   {
     title: "SEO & Performance Growth",
-    to: "/seo-performance-growth",
     img: seoImg,
     alt: "SEO and performance growth",
     desc: "Strong foundations and measurable growth systems that compound over time—without the noise.",
@@ -70,7 +61,6 @@ const services = [
   },
   {
     title: "Commercials & Paid Media",
-    to: "/commercials-paid-media",
     img: commercialImg,
     alt: "Commercials and paid media",
     desc: "Cinematic commercials and paid campaigns designed to stop the scroll and drive action.",
@@ -83,7 +73,6 @@ const services = [
   },
   {
     title: "Lead Generation & Automation",
-    to: "/lead-generation-automation",
     img: automationImg,
     alt: "Lead generation and automation",
     desc: "Systems that capture, qualify, and follow up with leads automatically—so growth doesn’t depend on guesswork.",
@@ -96,7 +85,6 @@ const services = [
   },
   {
     title: "Ongoing Digital Managment",
-    to: "/ongoing-digital-management",
     img: managementImg,
     alt: "Ongoing digital management",
     desc: "We don’t just launch—we manage, refine, and evolve your digital presence with you.",
@@ -122,7 +110,7 @@ export default function ServicesSection() {
           </h2>
 
           <p className="mt-6 text-lg text-black/65 leading-relaxed">
-            Growing  brands with purpose by capturing attention today and creating momentum for tomorrow.
+            Growing brands with purpose by capturing attention today and creating momentum for tomorrow.
           </p>
         </div>
 
@@ -133,13 +121,8 @@ export default function ServicesSection() {
               key={service.title}
               className="overflow-hidden rounded-3xl border border-black/10 bg-white transition hover:-translate-y-0.5 hover:shadow-md"
             >
-              {/* Image Link (kept clickable) */}
-              <Link
-                to={service.to}
-                onClick={scrollTop}
-                className="group relative block h-56 sm:h-64"
-                aria-label={`View ${service.title} service`}
-              >
+              {/* Image (NO LINK) */}
+              <div className="group relative block h-56 sm:h-64">
                 <img
                   src={service.img}
                   alt={service.alt}
@@ -147,7 +130,7 @@ export default function ServicesSection() {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/10" />
-              </Link>
+              </div>
 
               <div className="p-8">
                 <h3 className="text-2xl font-semibold tracking-tight">

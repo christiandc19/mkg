@@ -1,6 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createHashRouter, RouterProvider } from "react-router-dom";
+import {
+  createHashRouter,
+  RouterProvider,
+  ScrollRestoration,
+} from "react-router-dom";
 import "./index.css";
 
 import SiteLayout from "./layouts/SiteLayout";
@@ -9,44 +13,25 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import BrandIdentity from "./components/services/BrandIdentity";
 import MediaContentProduction from "./components/services/MediaContentProduction";
-
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Case from "./pages/CaseStudies";
 
+import Foxwood_Case_Study from "./pages/Foxwood_Case_Study";
+import BeverlyDentist_Case_Study from "./pages/BeverlyHillsDentist_Case_Study";
 
-// ✅ Disable browser scroll restoration
-if ("scrollRestoration" in window.history) {
-  window.history.scrollRestoration = "manual";
-}
-
-// ✅ Force top immediately (helps most cases)
-window.scrollTo(0, 0);
-document.documentElement.scrollTop = 0;
-document.body.scrollTop = 0;
-
-// ✅ Force top AFTER the browser finishes restoring scroll (this fixes your case)
-window.addEventListener(
-  "load",
-  () => {
-    window.scrollTo(0, 0);
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-
-    // One more tick for safety (fonts/images/layout shifts)
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-    }, 0);
-  },
-  { once: true }
-);
+// ✅ No need for manual window.scrollTo hacks when using react-router's ScrollRestoration
 
 const router = createHashRouter([
   {
-    element: <SiteLayout />,
+    element: (
+      <>
+        {/* ✅ Handles restoring / resetting scroll between route changes */}
+        <ScrollRestoration />
+        <SiteLayout />
+      </>
+    ),
     children: [
       { path: "/", element: <Home /> },
       { path: "/about", element: <About /> },
@@ -57,7 +42,12 @@ const router = createHashRouter([
       { path: "/contact", element: <Contact /> },
       { path: "/privacy", element: <Privacy /> },
       { path: "/terms", element: <Terms /> },
+
       { path: "/case-studies", element: <Case /> },
+
+      // ✅ FIXED FOXWOOD ROUTE (matches the slug we set: "foxwood-springs")
+      { path: "/case-studies/foxwood-springs", element: <Foxwood_Case_Study /> },
+      { path: "/case-studies/beverly-hills-dentist", element: <BeverlyDentist_Case_Study /> },
 
 
     ],

@@ -380,7 +380,7 @@ export default function Home() {
 {/* ------------------------------------------------------------------------------------------------- */}
 
  {/* FINAL HOME CTA */}
-        <div className="flex flex-col items-center gap-6 pb-20 pt-20 bg-[white]">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 py-16 sm:py-20 text-center">
           <h2
             className="text-3xl sm:text-4xl font-semibold text-black"
             style={{ fontFamily: "Kinta, sans-serif" }}

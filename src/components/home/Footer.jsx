@@ -90,9 +90,9 @@ export default function Footer() {
               <FooterCol title="Contact">
                 <FooterRouterLink to="/contact">Contact</FooterRouterLink>
                 <FooterLink href="mailto:hello@mkggroup.com">
-                  Contact@MediaKingGroup.com
+                  Gabriel@MediaKingGroup.com
                 </FooterLink>
-                <FooterLink href="tel:+13105551234">(310) 555-1234</FooterLink>
+                <FooterLink href="tel:+3107107555">(310) 710-7555</FooterLink>
               </FooterCol>
 
               <FooterCol title="Legal">
