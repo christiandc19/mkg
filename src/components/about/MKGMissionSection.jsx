@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function MKGMissionSection() {
   return (
-    <section className="w-full bg-[#F4F7F2] px-6 py-24 sm:px-10">
+    <section className="w-full bg-[white] px-6 py-24 sm:px-10">
       <div className="mx-auto max-w-6xl">
         {/* Top */}
         <motion.div

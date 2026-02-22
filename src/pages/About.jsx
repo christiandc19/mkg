@@ -1,10 +1,11 @@
-import MKGStory from '../components/about/MKGStorySection'
+import MKGAboutUsSection from '../components/about/MKGAboutUsSection'
 import MKGMission from '../components/about/MKGMissionSection'
 import MKGDifferent from '../components/about/MKGDifferentSection'
 import MKGThink from '../components/about/MKGHowWeThink'
 import BG from "../assets/images/mkg-hero-bg.webp";
 import { motion } from "framer-motion";
 import Typewriter from "../components/home/Typewriter";
+import Team from '../components/home/Team';
 
 export default function About() {
   return (
@@ -80,7 +81,8 @@ export default function About() {
 
 {/* -------------------------------------- */}
 
-<MKGStory/>
+<MKGAboutUsSection/>
+<Team />
 <MKGMission/>
 <MKGDifferent/>
 <MKGThink />

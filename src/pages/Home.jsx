@@ -42,6 +42,9 @@ import logo22 from "../assets/images/seneca-logo.png";
 import logo23 from "../assets/images/lakewood-logo.png";
 import logo24 from "../assets/images/embassy-logo.png";
 import logo25 from "../assets/images/vanadium-logo.png";
+import logo26 from "../assets/images/BHPI.png";
+import logo27 from "../assets/images/ddi_logo.png";
+
 
 
 
@@ -220,6 +223,8 @@ export default function Home() {
         direction="left"
         duration={28}
         items={[
+          { type: "logo", src: logo26, alt: "Beverly" },
+          { type: "logo", src: logo27, alt: "Doherty" },
           { type: "logo", src: logo15, alt: "Norwood" },
           { type: "logo", src: logo16, alt: "Foxwood" },
           { type: "logo", src: logo17, alt: "Oakdale" },

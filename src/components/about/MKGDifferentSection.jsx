@@ -9,9 +9,10 @@ export default function MKGDifferentSection({
   imageAlt = "Media King Group — systems-first creative",
 }) {
   return (
-    <section className="w-full bg-white px-6 py-24 sm:px-10">
+    <section className="w-full bg-black px-6 py-24 sm:px-10">
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
+
           {/* LEFT: Copy */}
           <motion.div
             initial={{ opacity: 0, y: 14 }}
@@ -20,18 +21,18 @@ export default function MKGDifferentSection({
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="lg:col-span-7"
           >
-            <div className="text-xs tracking-[0.3em] uppercase text-black/50">
+            <div className="text-xs tracking-[0.3em] uppercase text-white/50">
               WHAT MAKES US DIFFERENT
             </div>
 
             <h2
-              className="mt-4 text-3xl sm:text-4xl font-semibold tracking-tight text-black"
+              className="mt-4 text-3xl sm:text-4xl font-semibold tracking-tight text-white"
               style={{ fontFamily: "Kinta, sans-serif" }}
             >
               Luxury Creative + Performance Strategy
             </h2>
 
-            <p className="mt-3 max-w-2xl text-black/60 leading-relaxed">
+            <p className="mt-3 max-w-2xl text-white/70 leading-relaxed">
               We blend premium design with measurable outcomes.
             </p>
 
@@ -51,20 +52,21 @@ export default function MKGDifferentSection({
               />
             </div>
 
-            {/* Micro CTA */}
+            {/* CTA */}
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link
                 to="/contact"
-                      onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
-                      className="rounded-full border border-black/20 px-6 py-3 text-sm font-semibold hover:bg-black/5"
-                      >
-                            
-                Book a call 
+                onClick={() =>
+                  window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+                }
+                className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-white hover:text-black transition"
+              >
+                Book a call
               </Link>
             </div>
           </motion.div>
 
-          {/* RIGHT: Image (no border, no overlay, no background, not cropped) */}
+          {/* RIGHT: Image */}
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -87,14 +89,16 @@ export default function MKGDifferentSection({
 
 function FeatureRow({ title, desc }) {
   return (
-    <div className="flex items-start gap-4 rounded-2xl bg-[#F4F7F2] p-5 ring-1 ring-black/10">
+    <div className="flex items-start gap-4 rounded-2xl bg-white/5 p-5 ring-1 ring-white/10 backdrop-blur-sm">
       <div
-        className="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-black/70"
+        className="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-white/70"
         aria-hidden
       />
       <div>
-        <div className="text-sm font-semibold text-black">{title}</div>
-        <div className="mt-1 text-sm text-black/60 leading-relaxed">{desc}</div>
+        <div className="text-sm font-semibold text-white">{title}</div>
+        <div className="mt-1 text-sm text-white/70 leading-relaxed">
+          {desc}
+        </div>
       </div>
     </div>
   );

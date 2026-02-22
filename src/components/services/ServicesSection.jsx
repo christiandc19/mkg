@@ -1,5 +1,6 @@
 // src/components/services/ServicesSection.jsx
 import React from "react";
+import { Link } from "react-router-dom"; // ✅ added
 
 // Images
 import productionImg from "../../assets/images/production.webp";
@@ -15,7 +16,7 @@ const services = [
     title: "Brand Strategy & Positioning",
     img: brandingImg,
     alt: "Brand strategy and positioning",
-    desc: "Define your brand purpose, voice, and positioning so your message is clear, consistent, and compelling.",
+    desc: "Clear positioning is the foundation of everything we build. We ensure your brand knows who it is, who it’s for, and why it wins.",
     bullets: [
       "Brand purpose & narrative",
       "Audience + messaging framework",
@@ -27,7 +28,7 @@ const services = [
     title: "Content & Storytelling",
     img: productionImg,
     alt: "Content and storytelling",
-    desc: "Editorial content that builds trust, shapes perception, and turns attention into action.",
+    desc: "Editorial content that builds trust, shapes perception, and turns attention into action.We don’t just create content—we create meaningful signals that move audiences.",
     bullets: [
       "Brand voice & editorial direction",
       "Social content systems",
@@ -39,7 +40,7 @@ const services = [
     title: "Web Design & Development",
     img: webDevImg,
     alt: "Web design and development",
-    desc: "High-performing, modern websites that feel elegant and convert—built to scale with your business.",
+    desc: "High-performing, modern websites designed to convert and scale. Your website isn’t a brochure—it’s a growth engine.",
     bullets: [
       "UX/UI + responsive design",
       "React / WordPress builds (as needed)",
@@ -51,7 +52,7 @@ const services = [
     title: "SEO & Performance Growth",
     img: seoImg,
     alt: "SEO and performance growth",
-    desc: "Strong foundations and measurable growth systems that compound over time—without the noise.",
+    desc: "Sustainable growth systems that compound over time—without the noise. We focus on long-term visibility and measurable outcomes, not vanity metrics.",
     bullets: [
       "SEO foundations + content planning",
       "CRO (conversion optimization)",
@@ -63,34 +64,34 @@ const services = [
     title: "Commercials & Paid Media",
     img: commercialImg,
     alt: "Commercials and paid media",
-    desc: "Cinematic commercials and paid campaigns designed to stop the scroll and drive action.",
+    desc: "High-impact creative paired with strategic distribution. We combine storytelling and performance to ensure your media doesn’t just look good—it works.",
     bullets: [
-      "Commercial & brand video",
-      "Paid social + search creative",
-      "Campaign strategy + testing",
-      "Landing pages + conversion support",
+      "Commercial Production",
+      "Paid Social & Paid Search Strategy",
+      "Creative Testing & Iteration",
+      "Campaign Optimization & Reporting",
     ],
   },
   {
     title: "Lead Generation & Automation",
     img: automationImg,
     alt: "Lead generation and automation",
-    desc: "Systems that capture, qualify, and follow up with leads automatically—so growth doesn’t depend on guesswork.",
+    desc: "Behind-the-scenes systems that turn attention into qualified leads. We build systems that capture demand, nurture interest, and move leads to action—automatically.",
     bullets: [
-      "CRM + form integrations",
-      "Email/SMS follow-up flows",
-      "Lead routing + segmentation",
-      "Dashboards + workflow automation",
+      "Funnel & Lead Magnet Strategy",
+      "CRM & Form Integrations",
+      "Email/SMS Follow-up Flows",
+      "Lead Routing, Segmentation & Automation",
     ],
   },
   {
     title: "Ongoing Digital Managment",
     img: managementImg,
     alt: "Ongoing digital management",
-    desc: "We don’t just launch—we manage, refine, and evolve your digital presence with you.",
+    desc: "We don’t just launch—we evolve with you. Growth isn’t static. Your digital presence shouldn’t be either.",
     bullets: [
-      "Website updates + improvements",
-      "Performance monitoring",
+      "Website Updates & Optimization",
+      "Performance Monitoring",
       "Monthly strategy iteration",
       "Content & campaign support",
     ],
@@ -121,7 +122,7 @@ export default function ServicesSection() {
               key={service.title}
               className="overflow-hidden rounded-3xl border border-black/10 bg-white transition hover:-translate-y-0.5 hover:shadow-md"
             >
-              {/* Image (NO LINK) */}
+              {/* Image */}
               <div className="group relative block h-56 sm:h-64">
                 <img
                   src={service.img}
@@ -132,7 +133,7 @@ export default function ServicesSection() {
                 <div className="absolute inset-0 bg-black/10" />
               </div>
 
-              <div className="p-8">
+              <div className="p-8 flex flex-col h-full">
                 <h3 className="text-2xl font-semibold tracking-tight">
                   {service.title}
                 </h3>
@@ -146,6 +147,17 @@ export default function ServicesSection() {
                     <li key={b}>• {b}</li>
                   ))}
                 </ul>
+
+                {/* ✅ CTA Button */}
+                <Link
+                  to="/contact"
+                  onClick={() =>
+                    window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+                  }
+                  className="mt-7 inline-flex w-fit rounded-full border border-black/20 px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-black hover:text-white"
+                >
+                  Let&apos;s Work Together
+                </Link>
               </div>
             </article>
           ))}
