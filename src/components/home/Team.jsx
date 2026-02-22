@@ -23,7 +23,7 @@ const teamRows = [
 function TeamCard({ member }) {
   return (
     <div className="flex flex-col items-center text-center">
-      <div className="w-[140px] h-[140px] rounded-full overflow-hidden border-2 border-white shadow-lg">
+      <div className="w-[130px] h-[130px] rounded-full overflow-hidden border-2 border-white shadow-lg">
         <img
           src={member.img}
           alt={member.name}
@@ -33,50 +33,71 @@ function TeamCard({ member }) {
         />
       </div>
 
-      <h3 className="text-white text-xl font-semibold mt-3">{member.name}</h3>
-      <p className="text-gray-300 text-sm font-medium">{member.role}</p>
+      <h3 className="text-white text-lg font-semibold mt-2">
+        {member.name}
+      </h3>
+      <p className="text-gray-300 text-sm">{member.role}</p>
     </div>
   );
 }
 
 export default function Team() {
   return (
-    <section className="bg-black w-full py-20 px-6 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto relative z-10">
-
-        {/* Header (Kinta font style) */}
+    <section className="bg-black w-full py-16 px-6 relative overflow-hidden">
+      
+      {/* MKG Watermark */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <div
-          className="select-none mb-16"
+          className="select-none"
           style={{
             fontFamily: "Kinta, sans-serif",
             fontWeight: 400,
-            fontSize: "clamp(4rem, 10vw, 6rem)",
+            fontSize: "clamp(7rem, 24vw, 30rem)",
             lineHeight: 1,
-            opacity: 0.8,
+            opacity: 0.05,
             letterSpacing: "-0.04em",
             color: "white",
-            textAlign: "center"
+          }}
+        >
+          MKG
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+
+        {/* Header */}
+        <div
+          className="select-none mb-10"
+          style={{
+            fontFamily: "Kinta, sans-serif",
+            fontWeight: 400,
+            fontSize: "clamp(3.5rem, 9vw, 5.5rem)",
+            lineHeight: 1,
+            opacity: 0.9,
+            letterSpacing: "-0.04em",
+            color: "white",
+            textAlign: "center",
           }}
         >
           OUR TEAM
         </div>
 
         {/* Row 1 */}
-        <div className="flex justify-center mb-14">
+        <div className="flex justify-center mb-8">
           {teamRows[0].map((m) => (
             <TeamCard key={m.name} member={m} />
           ))}
         </div>
 
         {/* Row 2 */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 justify-items-center mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-items-center mb-8">
           {teamRows[1].map((m) => (
             <TeamCard key={m.name} member={m} />
           ))}
         </div>
 
         {/* Row 3 */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-items-center">
           {teamRows[2].map((m) => (
             <TeamCard key={m.name} member={m} />
           ))}
