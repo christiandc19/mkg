@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {
-  createHashRouter,
+  createBrowserRouter,
   RouterProvider,
   ScrollRestoration,
 } from "react-router-dom";
@@ -21,13 +21,10 @@ import Case from "./pages/CaseStudies";
 import Foxwood_Case_Study from "./pages/Foxwood_Case_Study";
 import BeverlyDentist_Case_Study from "./pages/BeverlyHillsDentist_Case_Study";
 
-// ✅ No need for manual window.scrollTo hacks when using react-router's ScrollRestoration
-
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     element: (
       <>
-        {/* ✅ Handles restoring / resetting scroll between route changes */}
         <ScrollRestoration />
         <SiteLayout />
       </>
@@ -38,18 +35,15 @@ const router = createHashRouter([
       { path: "/services", element: <Services /> },
       { path: "/brand-identity", element: <BrandIdentity /> },
       { path: "/media-content-production", element: <MediaContentProduction /> },
-
       { path: "/contact", element: <Contact /> },
       { path: "/privacy", element: <Privacy /> },
       { path: "/terms", element: <Terms /> },
-
       { path: "/case-studies", element: <Case /> },
-
-      // ✅ FIXED FOXWOOD ROUTE (matches the slug we set: "foxwood-springs")
       { path: "/case-studies/foxwood-springs", element: <Foxwood_Case_Study /> },
-      { path: "/case-studies/beverly-hills-dentist", element: <BeverlyDentist_Case_Study /> },
-
-
+      {
+        path: "/case-studies/beverly-hills-dentist",
+        element: <BeverlyDentist_Case_Study />,
+      },
     ],
   },
 ]);
