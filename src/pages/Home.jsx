@@ -142,9 +142,9 @@ export default function Home() {
         className="w-full"
       >
         <h1
-          className="leading-none tracking-tight"
+          className="leading-none tracking-tight pt-10"
           style={{
-            fontSize: "clamp(5rem, 9vw, 8rem)",
+            fontSize: "clamp(4rem, 8vw, 8rem)",
             fontFamily: "Kinta, sans-serif",
             fontWeight: 400,
           }}
