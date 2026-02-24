@@ -177,7 +177,7 @@ export default function CaseStudiesCarousel({
   }
 
   return (
-    <section className="w-full px-4 sm:px-8 py-16 overflow-x-hidden bg-[white] text-white">
+    <section className="w-full px-4 sm:px-8 pt-16 pb-0 overflow-x-hidden bg-[white] text-white">
       <div className="mx-auto w-[95%] lg:w-[100%]">
         <div className="mb-8 flex flex-col gap-2">
           <h2

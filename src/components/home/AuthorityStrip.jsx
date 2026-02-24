@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AuthorityStrip() {
   return (
-    <section className="w-full px-4 sm:px-8 pt-20 pb-20 bg-[white]">
+    <section className="w-full px-4 sm:px-4 pt-10 pb-10 bg-[white]">
       <div className="mx-auto w-[95%] lg:w-[90%]">
         {/* Same container style as Client Logos */}
         <div className="rounded-3xl bg-[black] p-6 sm:p-8 ring-1 ring-black/5">
