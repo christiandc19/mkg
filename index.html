@@ -1,6 +1,25 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Media King Group</title>
+    <meta
+      name="description"
+      content="Media King Group — branding, media content production, and creative services."
+    />
+
+    <!-- =========================
+         Favicons
+    ========================== -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <!-- Optional -->
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
+
+    <!-- =========================
+         Fonts
+    ========================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -8,13 +27,70 @@
       rel="stylesheet"
     />
 
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mkg</title>
+    <!-- =========================
+         GOOGLE TAG MANAGER (HEAD)
+         Replace GTM-XXXXXXX
+    ========================== -->
+    <script>
+      (function(w,d,s,l,i){
+        w[l]=w[l]||[];
+        w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),
+            dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-XXXXXXX');
+    </script>
+
+    <!-- =========================
+         ANALYTICS PLACEHOLDER
+         (GA4, Meta Pixel, etc.)
+    ========================== -->
+    <!-- 
+    <script>
+      // Analytics script goes here
+    </script>
+    -->
+
+    <!-- =========================
+         SITE VERIFICATION TAGS
+         (Google Search Console, etc.)
+    ========================== -->
+    <!-- <meta name="google-site-verification" content="YOUR_CODE" /> -->
+
   </head>
+
   <body>
+
+    <!-- =========================
+         GOOGLE TAG MANAGER (NOSCRIPT)
+         REQUIRED directly after <body>
+    ========================== -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
+    </noscript>
+
     <div id="root"></div>
+
+    <!-- =========================
+         VITE ENTRY
+    ========================== -->
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- =========================
+         EXTRA THIRD-PARTY SCRIPTS
+         (chat widgets, tracking, etc.)
+    ========================== -->
+    <!--
+    <script src="https://example.com/widget.js" async></script>
+    -->
+
   </body>
 </html>

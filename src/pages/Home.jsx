@@ -107,26 +107,25 @@ export default function Home() {
     backgroundRepeat: "no-repeat",
   }}
 >
-  {/* Optional dark overlay for readability */}
-  <div className="absolute inset-0 bg-black/70" />
+{/* Dark overlay — lighter on mobile */}
+<div className="absolute inset-0 bg-black/50 md:bg-black/70" />
 
-  {/* Watermark */}
-  <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-    <div
-      className="select-none"
-      style={{
-        fontFamily: "Kinta, sans-serif",
-        fontWeight: 400,
-        fontSize: "clamp(10rem, 24vw, 30rem)",
-        lineHeight: 1,
-        opacity: 0.05,
-        letterSpacing: "-0.04em",
-        color: "white",
-      }}
-    >
-      MKG
-    </div>
+{/* Watermark */}
+<div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+  <div
+    className="select-none opacity-10 md:opacity-5"
+    style={{
+      fontFamily: "Kinta, sans-serif",
+      fontWeight: 400,
+      fontSize: "clamp(10rem, 24vw, 30rem)",
+      lineHeight: 1,
+      letterSpacing: "-0.04em",
+      color: "white",
+    }}
+  >
+    MKG
   </div>
+</div>
 
   {/* Content */}
   <div className="relative z-10 mx-auto max-w-6xl">

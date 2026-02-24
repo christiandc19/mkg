@@ -1,10 +1,10 @@
-import Gabe from "../../assets/images/GABE.png";
-import Marti from "../../assets/images/MARTI.JPG";
-import Chris from "../../assets/images/CHRIS.png";
-import Jen from "../../assets/images/JEN.png";
-import Teck from "../../assets/images/TECK.png";
-import Giselle from "../../assets/images/GISELLE.jpg";
-import Sammy from "../../assets/images/SAMMY.png";
+import Gabe from "../../assets/images/GABE.webp";
+import Marti from "../../assets/images/MARTI.webp";
+import Chris from "../../assets/images/CHRIS.webp";
+import Jen from "../../assets/images/JEN.webp";
+import Teck from "../../assets/images/TECK.webp";
+import Giselle from "../../assets/images/GISELLE.webp";
+import Sammy from "../../assets/images/SAMMY.webp";
 
 const teamRows = [
   [{ name: "Gabriel King", role: "CEO", img: Gabe, zoom: true }],

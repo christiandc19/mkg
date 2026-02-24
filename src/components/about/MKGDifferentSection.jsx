@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import laptopGuy from "../../assets/images/laptop-guy.png";
+import laptopGuy from "../../assets/images/laptop-guy.webp";
 
 export default function MKGDifferentSection({
   imageSrc = laptopGuy,
