@@ -75,7 +75,7 @@ export default function Footer() {
               </p>
 
               <p className="mt-8 text-xs uppercase tracking-widest text-black/50">
-                Based in Los Angeles, CA
+                Based in Nashville, TN
               </p>
             </div>
 
