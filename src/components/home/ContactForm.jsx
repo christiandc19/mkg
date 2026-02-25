@@ -1,6 +1,12 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export default function ContactForm() {
+  const formRef = useRef(null);
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
   const [error, setError] = useState("");
 
@@ -9,46 +15,73 @@ export default function ContactForm() {
     setStatus("sending");
     setError("");
 
-    const form = new FormData(e.currentTarget);
+    const formEl = formRef.current;
+    if (!formEl) {
+      setStatus("error");
+      setError("Form not found. Please refresh and try again.");
+      return;
+    }
+
+    // Basic env sanity check (helps avoid silent failures)
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+      setStatus("error");
+      setError("Email service is not configured (missing .env values).");
+      return;
+    }
+
+    const fd = new FormData(formEl);
 
     const payload = {
-      name: form.get("name")?.toString().trim(),
-      email: form.get("email")?.toString().trim(),
-      company: form.get("company")?.toString().trim(),
-      role: form.get("role")?.toString().trim(),
-      message: form.get("message")?.toString().trim(),
-      // Honeypot (spam bots)
-      website: form.get("website")?.toString().trim(),
+      name: (fd.get("name") || "").toString().trim(),
+      email: (fd.get("email") || "").toString().trim(),
+      company: (fd.get("company") || "").toString().trim(),
+      role: (fd.get("role") || "").toString().trim(),
+      message: (fd.get("message") || "").toString().trim(),
+      website: (fd.get("website") || "").toString().trim(), // honeypot
     };
 
-    // Basic honeypot guard
+    // Honeypot guard
     if (payload.website) {
       setStatus("error");
       setError("Submission blocked.");
       return;
     }
 
+    // Simple validation (extra safety beyond required fields)
+    if (!payload.name || !payload.email || !payload.company || !payload.role || !payload.message) {
+      setStatus("error");
+      setError("Please fill out all fields.");
+      return;
+    }
+
+    const templateParams = {
+      from_name: payload.name,
+      from_email: payload.email,
+      company: payload.company,
+      role: payload.role,
+      message: payload.message,
+    };
+
     try {
-      const res = await fetch("/api/contact.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+      const res = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, {
+        publicKey: PUBLIC_KEY,
       });
 
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok || !data.ok) throw new Error(data.error || "Send failed");
+      // EmailJS typically returns 200 and text "OK"
+      if (res?.status !== 200) throw new Error("Send failed");
 
       setStatus("success");
-      e.currentTarget.reset();
+      formEl.reset(); // ✅ safe reset
     } catch (err) {
       setStatus("error");
-      setError(err?.message || "Something went wrong.");
+      setError(err?.text || err?.message || "Something went wrong.");
     }
   }
 
   return (
     <div className="flex justify-center py-16 px-4 bg-white">
       <form
+        ref={formRef}
         onSubmit={handleSubmit}
         className="w-full max-w-2xl rounded-2xl bg-white p-10 shadow-xl"
       >
@@ -121,7 +154,7 @@ export default function ContactForm() {
             />
           </div>
 
-          {/* Message (replaces Goals) */}
+          {/* Message */}
           <div className="md:col-span-2">
             <label className="mb-1 block text-xs font-medium uppercase tracking-wider text-gray-500">
               Message

@@ -80,7 +80,7 @@ export default function Footer() {
             </div>
 
             {/* Links */}
-            <div className="grid grid-cols-2 gap-10 md:col-span-2 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:col-span-2 md:grid-cols-3 min-w-0">
               <FooterCol title="Explore">
                 <FooterRouterLink to="/">Home</FooterRouterLink>
                 <FooterRouterLink to="/about">About</FooterRouterLink>
