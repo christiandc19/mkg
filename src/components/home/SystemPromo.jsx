@@ -1,54 +1,107 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Imac from "../../assets/images/imac.png";
 
 export default function SystemPromo() {
   return (
-    <section className="w-full px-4 sm:px-8 py-16">
-      <div className="mx-auto w-[95%] lg:w-[90%]">
-        <div className="relative overflow-hidden rounded-3xl bg-slate-950 ring-1 ring-white/10 shadow-2xl">
-          {/* Background glow */}
-          <div className="absolute inset-0 bg-[radial-gradient(1200px_circle_at_20%_20%,rgba(249,115,22,0.18),transparent_55%),radial-gradient(1000px_circle_at_80%_30%,rgba(99,102,241,0.20),transparent_55%),radial-gradient(800px_circle_at_60%_90%,rgba(14,165,233,0.14),transparent_60%)]" />
+    <section className="relative overflow-hidden bg-white px-4 py-24 sm:px-8 md:py-32">
+      {/* Large background word */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-1/2
+          top-1/2
+          -translate-x-1/2
+          -translate-y-1/2
+          whitespace-nowrap
+          text-[110px]
+          font-semibold
+          tracking-[-0.06em]
+          text-black/[0.025]
+          sm:text-[170px]
+          lg:text-[250px]
+          xl:text-[320px]
+        "
+        style={{ fontFamily: "Kinta, sans-serif" }}
+      >
+        SYSTEM
+      </div>
 
-          <div className="relative grid gap-10 p-8 sm:p-10 md:grid-cols-2 md:items-center">
-            {/* LEFT: Copy */}
-            <div className="text-white">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.05] tracking-tight">
-                Your brand doesn’t need more content.
-                <br />
-                <span className="mt-3 inline-flex rounded-full bg-orange-500/95 px-4 py-2 text-white">
-                  It needs a system.
-                </span>
-              </h2>
+      <div className="relative z-10 mx-auto w-full max-w-7xl">
+        <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
 
-              <p className="mt-6 max-w-xl text-base sm:text-lg text-white/75 leading-relaxed">
-                Media King Group designs and operates high-performing digital ecosystems — brand identity,
-                content engines, websites, funnels, and strategy — built to grow visibility, trust, and
-                revenue over time.
+          {/* LEFT */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="mb-6 flex items-center gap-4">
+              <span className="h-px w-10 bg-[#f0a608]" />
+
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-black/40">
+                Built to Compound
               </p>
-
-              <a
-                href="/"
-                className="mt-8 inline-flex items-center gap-3 rounded-xl bg-orange-500 px-5 py-3 text-sm sm:text-base font-semibold text-white shadow-lg shadow-orange-500/20 hover:bg-orange-400 transition"
-              >
-                Learn more about MKG
-                <span aria-hidden className="text-lg leading-none">
-                  ↗
-                </span>
-              </a>
             </div>
 
-            {/* RIGHT: Image */}
-            <div className="relative flex items-center justify-center">
-              {/* glow behind image */}
-              <div className="absolute -inset-10 rounded-[40px] bg-orange-500/10 blur-3xl" />
+            <h2
+              className="
+                text-[46px]
+                font-semibold
+                leading-[0.95]
+                tracking-[-0.045em]
+                text-black
+                sm:text-[60px]
+                md:text-[72px]
+                lg:text-[82px]
+              "
+              style={{ fontFamily: "Kinta, sans-serif" }}
+            >
+              Your brand doesn't
+              <br />
+              need more content.
+              <br />
 
+              <span className="text-black/30">
+                It needs a system.
+              </span>
+            </h2>
+
+            <p className="mt-8 max-w-xl text-lg leading-[1.75] text-black/55">
+              Media King Group designs and operates high-performing digital
+              ecosystems — brand identity, content engines, websites, and
+              strategy — built to grow visibility, trust, and revenue that
+              compound over time.
+            </p>
+
+            <div className="mt-8 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-black/40">
+              <span className="h-[6px] w-[6px] rounded-full bg-[#f0a608]" />
+              Strategy first. Systems always.
+            </div>
+          </motion.div>
+
+          {/* RIGHT */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="relative flex items-center justify-center"
+          >
+            {/* Soft glow */}
+            <div className="absolute h-[70%] w-[70%] rounded-full bg-[#f0a608]/10 blur-3xl" />
+
+            {/* Image frame */}
+            <div className="relative w-full max-w-[560px]">
               <img
                 src={Imac}
-                alt="Media King Group digital system"
-                className="relative max-w-full h-auto object-contain drop-shadow-2xl"
+                alt="Media King Group digital ecosystem"
+                className="relative z-10 h-auto w-full object-contain drop-shadow-2xl"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

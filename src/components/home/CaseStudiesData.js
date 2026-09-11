@@ -1,90 +1,172 @@
-import Beverly from '../../assets/images/beverly-hills-dentist.webp'
-import Design from '../../assets/images/design-brand.webp'
-import Outpatient from '../../assets/images/outpatient.webp'
+import Beverly from "../../assets/images/beverly-hills-dentist.webp";
+import Design from "../../assets/images/design-brand.webp";
+import Outpatient from "../../assets/images/outpatient.webp";
+
+/*
+  NOTE:
+  Outpatient is temporarily being used for Fat Puppy.
+  Replace it with the real Fat Puppy image once available.
+*/
 
 export const CASE_STUDIES = [
   {
     id: "oakdale",
-    title: "Oakdale Seniors Alliance Case Study.",
+    title: "Oakdale Seniors Alliance",
+    category: "Senior Living",
+
+    eyebrow: "10-COMMUNITY PORTFOLIO",
+
     description:
-      "A multi-location senior living organization transformed from digital invisibility into a unified, lead-generating ecosystem.",
+      "Ten senior living communities transformed from digital invisibility into a connected growth ecosystem spanning social media, websites, content, and lead generation.",
+
     client: "Oakdale Seniors Alliance",
-    cta: "Read the Case Study",
-    href: "#",
-    logoText: "Oakdale Seniors Alliance",
-    logoType: "oakdale",
+
+    mainMetric: "300K+",
+    mainMetricLabel: "Followers Across the Portfolio",
+
+    metrics: [
+      {
+        value: "150K+",
+        label: "Organic Website Visits",
+      },
+      {
+        value: "2,800+",
+        label: "Inquiries in 2025",
+      },
+    ],
+
+    cta: "Explore the Portfolio",
+    href: "/case-studies/oakdale-seniors-alliance",
+
     image:
       "https://i0.wp.com/oakdalesa.com/wp-content/uploads/2025/10/oakdale-hero-4-1.jpg?fit=1920%2C1250&ssl=1",
-    tags: ["Senior Living", "Independent Living", "Assisted Living"],
+
+    alt: "Oakdale Seniors Alliance senior living community",
+
+    tags: [
+      "Social Growth",
+      "Web Strategy",
+      "Lead Generation",
+    ],
   },
+
   {
-    id: "beverly hills dentist",
-    title: "Beverly Hills Dentist — Case Studies",
+    id: "beverly-hills-periodontist",
+    title: "Beverly Hills Periodontist",
+    category: "Healthcare",
+
+    eyebrow: "SOCIAL GROWTH + MONETIZATION",
+
     description:
-      "Site utility study, compressed air demand, and power distribution assessment to confirm readiness for new equipment commissioning.",
-    client: "Beverly Hills Dentist",
+      "A focused short-form content strategy grew TikTok from 2.5K to 318K+ followers in six months — then turned that audience into a $50K brand partnership.",
+
+    client: "Beverly Hills Periodontist",
+
+    mainMetric: "318K+",
+    mainMetricLabel: "TikTok Followers",
+
+    metrics: [
+      {
+        value: "2.5K",
+        label: "Starting Audience",
+      },
+      {
+        value: "$50K",
+        label: "Brand Deal",
+      },
+    ],
+
     cta: "Read the Case Study",
-    href: "#",
-    logoText: "BEVERLY HILLS DENTIST",
-    logoType: "text",
-    image:
-      Beverly,
-    tags: ["Power", "Utilities", "Commissioning"],
+    href: "/case-studies/beverly-hills-periodontist",
+
+    image: Beverly,
+
+    alt: "Beverly Hills Periodontist case study",
+
+    tags: [
+      "TikTok",
+      "Organic Growth",
+      "Monetization",
+    ],
   },
+
   {
-    id: "design",
-    title: "Design Brand — Case Studies",
+    id: "fat-puppy",
+    title: "Fat Puppy",
+    category: "Entertainment",
+
+    eyebrow: "AUDIENCE GROWTH",
+
     description:
-      "A visual brand turned into a growth and sales engine through strategic media.",
-    client: "Design Brand",
+      "A repeatable entertainment content engine scaled Facebook from 12K to 735K followers, with top-performing videos generating more than 70 million views.",
+
+    client: "Fat Puppy",
+
+    mainMetric: "735K",
+    mainMetricLabel: "Facebook Followers",
+
+    metrics: [
+      {
+        value: "12K",
+        label: "Starting Audience",
+      },
+      {
+        value: "70M+",
+        label: "Top Video Views",
+      },
+    ],
+
     cta: "Read the Case Study",
-    href: "#",
-    logoText: "Desgign Brand",
-    logoType: "text",
-    image:
-      Design,
-    tags: ["Central Plant", "Cost Model", "Entitlements"],
+    href: "/case-studies/fat-puppy",
+
+    image: Outpatient,
+
+    alt: "Fat Puppy entertainment brand case study",
+
+    tags: [
+      "Facebook",
+      "Viral Content",
+      "Audience Growth",
+    ],
   },
+
   {
-    id: "delta",
-    title: "Delta Logistics — Warehouse Retrofit",
+    id: "ddi-designs",
+    title: "DDI Designs",
+    category: "Design",
+
+    eyebrow: "AUDIENCE → COMMERCE",
+
     description:
-      "Electrical demand modeling and HVAC zoning strategies to support a phased warehouse modernization program.",
-    client: "Delta Logistics",
+      "Instagram growth expanded the brand from 6.8K to 60.7K followers and turned audience attention into an additional channel for product sales.",
+
+    client: "DDI Designs",
+
+    mainMetric: "60.7K",
+    mainMetricLabel: "Instagram Followers",
+
+    metrics: [
+      {
+        value: "6.8K",
+        label: "Starting Audience",
+      },
+      {
+        value: "Sales",
+        label: "Generated Through Audience Growth",
+      },
+    ],
+
     cta: "Read the Case Study",
-    href: "#",
-    logoText: "DELTA",
-    logoType: "text",
-    image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=80",
-    tags: ["Electrical", "HVAC", "Phasing"],
-  },
-  {
-    id: "lighthouse",
-    title: "Lighthouse Health — Outpatient Campus",
-    description:
-      "Central plant options, redundancy analysis, and cost modeling for a new outpatient healthcare campus.",
-    client: "Lighthouse Health",
-    cta: "Read the Case Study",
-    href: "#",
-    logoText: "LIGHTHOUSE",
-    logoType: "text",
-    image:
-      Outpatient,
-    tags: ["Central Plant", "Healthcare", "Cost Model"],
-  },
-  {
-    id: "northstar",
-    title: "Northstar Data — Mission-Critical Facility",
-    description:
-      "Power redundancy, cooling strategies, and risk analysis for a new mission-critical data operations facility.",
-    client: "Northstar Data",
-    cta: "Read the Case Study",
-    href: "#",
-    logoText: "NORTHSTAR",
-    logoType: "text",
-    image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80",
-    tags: ["Power", "Cooling", "Risk Analysis"],
+    href: "/case-studies/ddi-designs",
+
+    image: Design,
+
+    alt: "DDI Designs case study",
+
+    tags: [
+      "Instagram",
+      "Brand Growth",
+      "Product Sales",
+    ],
   },
 ];
